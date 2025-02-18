@@ -1,0 +1,156 @@
+
+:root { 
+	--color-shopee: #EE4D2D;
+	--color-shopee-2: #ff6220;
+	}
+
+
+
+
+.badge-soft-primary{color:#556ee6;background-color:rgba(85,110,230,.18)}
+.badge-soft-primary[href]:focus,.badge-soft-primary[href]:hover{color:#556ee6;text-decoration:none;background-color:rgba(85,110,230,.4)}
+.badge-soft-secondary{color:#74788d;background-color:rgba(116,120,141,.18)}
+.badge-soft-secondary[href]:focus,.badge-soft-secondary[href]:hover{color:#74788d;text-decoration:none;background-color:rgba(116,120,141,.4)}
+.badge-soft-success{color:#34c38f;background-color:rgba(52,195,143,.18)}
+.badge-soft-success[href]:focus,.badge-soft-success[href]:hover{color:#34c38f;text-decoration:none;background-color:rgba(52,195,143,.4)}
+.badge-soft-info{color:#50a5f1;background-color:rgba(80,165,241,.18)}
+.badge-soft-info[href]:focus,.badge-soft-info[href]:hover{color:#50a5f1;text-decoration:none;background-color:rgba(80,165,241,.4)}
+.badge-soft-warning{color:#f1b44c;background-color:rgba(241,180,76,.18)}
+.badge-soft-warning[href]:focus,.badge-soft-warning[href]:hover{color:#f1b44c;text-decoration:none;background-color:rgba(241,180,76,.4)}
+.badge-soft-danger{color:#f46a6a;background-color:rgba(244,106,106,.18)}
+.badge-soft-danger[href]:focus,.badge-soft-danger[href]:hover{color:#f46a6a;text-decoration:none;background-color:rgba(244,106,106,.4)}
+.badge-soft-pink{color:#e83e8c;background-color:rgba(232,62,140,.18)}
+.badge-soft-pink[href]:focus,.badge-soft-pink[href]:hover{color:#e83e8c;text-decoration:none;background-color:rgba(232,62,140,.4)}
+.badge-soft-light{color:#eff2f7;background-color:rgba(239,242,247,.18)}
+.badge-soft-light[href]:focus,.badge-soft-light[href]:hover{color:#eff2f7;text-decoration:none;background-color:rgba(239,242,247,.4)}
+.badge-soft-dark{color:#343a40;background-color:rgba(52,58,64,.18)}
+.badge-soft-dark[href]:focus,.badge-soft-dark[href]:hover{color:#343a40;text-decoration:none;background-color:rgba(52,58,64,.4)}
+/* Badge Shope Mall */
+.badge-soft-SpMall{color:#fff;background-color:#DB0000;}
+.badge-soft-SpMall[href]:focus,.badge-soft-SpMall[href]:hover{color:#f46a6a;text-decoration:none;background-color:#ff0000}
+.font-SpMall{ font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; font-weight: bold; /* Tulisan tebal */ }
+
+
+
+/*********************************
+5.1 New Arrivals Sorting
+*********************************/
+.new_arrivals_sorting {
+    display: flex; /* Gunakan flexbox agar tombol tetap sejajar */
+    overflow-x: auto; /* Aktifkan scroll horizontal */
+    overflow-y: hidden; /* Hilangkan scroll vertikal */
+    white-space: nowrap; /* Pastikan tombol tetap dalam satu baris */
+    border-radius: 3px;
+    margin-top: 20px; /* Kurangi margin agar lebih rapi */
+    scroll-behavior: smooth; /* Efek smooth saat scroll */
+    max-width: 100%; /* Agar tidak melebihi lebar layar */
+    padding-bottom: 0; /* Hilangkan padding bawah agar tidak ada ruang kosong */
+}
+
+/* Menghilangkan scrollbar default di semua browser */
+.new_arrivals_sorting::-webkit-scrollbar {
+    display: none; /* Hilangkan scrollbar di Chrome, Safari */
+}
+.new_arrivals_sorting {
+    -ms-overflow-style: none;  /* Hilangkan scrollbar di Internet Explorer & Edge */
+    scrollbar-width: none; /* Hilangkan scrollbar di Firefox */
+}
+
+/* Tombol tetap dalam satu baris */
+.arrivals_grid_sorting {
+    display: flex;
+    gap: 5px; /* Kurangi jarak antar tombol agar lebih rapi */
+    padding: 5px; /* Kurangi padding agar tidak terlalu besar */
+}
+
+/* Atur tombol agar tetap rapi */
+.grid_sorting_button {
+    height: 40px;
+    min-width: 102px;
+    padding: 0 15px; /* Kurangi padding kiri dan kanan */
+    cursor: pointer;
+    border: solid 1px #ebebeb;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    background: #FFFFFF;
+    border-radius: 3px;
+    margin: 0;
+    flex: none; /* Mencegah tombol melebar */
+}
+
+/* Efek tombol aktif */
+.grid_sorting_button.active {
+    color: #FFFFFF;
+    background: var(--color-shopee-2);
+}
+
+.grid_sorting_button.active:hover {
+    background: var(--color-shopee-2) !important;
+}
+
+/*********************************
+5.2 New Arrivals Products Grid
+*********************************/
+
+	
+.product { display: block; }
+/* BUTTON SHOPEE */
+.btn-shopee { color: #fff; background-color: var(--color-shopee); border-color: var(--color-shopee); } 
+.btn-shopee:hover { color: #fff; background-color: #D74426; border-color: #C43D21; } 
+.btn-shopee:focus { box-shadow: 0 0 0 0.25rem rgba(238, 77, 45, 0.5); } 
+.btn-shopee:active { color: #fff; background-color: #C43D21; border-color: #B0371E; box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); } 
+.btn-shopee:disabled { color: #fff; background-color: var(--color-shopee); border-color: var(--color-shopee); }
+/* IMG HOVER PRODUK*/
+.image-container { position: relative; display: inline-block; width: 100%; max-width: 400px; height: auto; }
+.image-container img { width: 100%; height: auto; object-fit: cover; display: block; }
+.button-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; text-align: center; opacity: 0; visibility: hidden; transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; }  
+.image-container:hover .button-overlay { opacity: 1; visibility: visible; }  
+.btn { padding: 8px 12px; font-size: 14px; }  
+/* TEKS SHOPEE */
+.text-shopee { color: var(--color-shopee) }
+.text-shopee-2 { color: var(--color-shopee-2); }
+/* Styling dasar untuk ikon hati */ .heart-icon { font-size: 20px; color: #333; /* Warna default */ cursor: pointer; transition: color 0.3s ease-in-out; }
+/* Warna merah saat aktif */ .liked { color: red; }
+
+
+
+
+/**********************
+Text Bergaris By AGZ
+***********************/
+.container-text { width: 200px; }
+.row-text { display: flex; justify-content: space-between; font-weight: bold;}
+.label-text { text-align: right; }
+.value-text { text-align: right;}
+.hr-arda {border: none; border-top: 2px solid #ccc; margin: 5px 0;}
+.hr-arda-2 { display: inline-block; width: auto; min-width: 220px; /* Bisa disesuaikan */ max-width: 100%; border: 1px solid #ccc;}
+
+
+
+/****** FOOTER COLOR BY AGZ ******/
+/* Style dasar teks */ .footer-text-running { background: -webkit-gradient(linear, left top, right top, color-stop(10%, #ff6c2f), color-stop(50%, #f9b931), color-stop(60%, #22c55e)); background: linear-gradient(to right, #ff6c2f 10%, #f9b931 50%, #22c55e 60%); background-size: auto auto; background-clip: border-box; background-size: 200% auto; background-clip: text; text-fill-color: transparent; -webkit-background-clip: text; -webkit-text-fill-color: transparent; -webkit-animation: textclip 2.5s linear infinite; animation: textclip 2.5s linear infinite; display: inline-block; } 
+/* Animasi efek warna berjalan */
+@-webkit-keyframes textclip { to { background-position: 200% center; } } 
+@keyframes textclip { to { background-position: 200% center; } }
+
+
+
+
+/*********
+Font Size
+**********/
+.font-size-10{font-size:10px!important}
+.font-size-11{font-size:11px!important}
+.font-size-12{font-size:12px!important}
+.font-size-13{font-size:13px!important}
+.font-size-14{font-size:14px!important}
+.font-size-15{font-size:15px!important}
+.font-size-16{font-size:16px!important}
+.font-size-17{font-size:17px!important}
+.font-size-18{font-size:18px!important}
+.font-size-20{font-size:20px!important}
+.font-size-22{font-size:22px!important}
+.font-size-24{font-size:24px!important}
+
+

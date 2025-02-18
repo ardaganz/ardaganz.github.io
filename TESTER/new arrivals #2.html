@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Arrivals</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .new_arrivals_sorting {
+            margin-bottom: 20px;
+        }
+
+        .arrivals_grid_sorting {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .grid_sorting_button {
+            cursor: pointer;
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 5px;
+            text-transform: capitalize;
+        }
+
+        .grid_sorting_button.active {
+            background-color: #2980b9;
+        }
+
+        .product {
+            display: block;
+        }
+
+        .card {
+            margin-bottom: 20px;
+        }
+
+        .button-overlay button {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>New Arrivals</h1>
+
+    <!-- Filter Menu -->
+    <div class="row align-items-center">
+        <div class="col text-center">
+            <div class="new_arrivals_sorting">
+                <ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
+                    <li class="grid_sorting_button active is-checked" data-filter="all">all</li>
+                    <li class="grid_sorting_button" data-filter="pakaian">pakaian</li>
+                    <li class="grid_sorting_button" data-filter="youtube">youtube</li>
+                    <li class="grid_sorting_button" data-filter="tiktok">tiktok</li>
+                    <li class="grid_sorting_button" data-filter="instagram">instagram</li>
+                    
+                    <li class="grid_sorting_button" data-filter="kontol">kontol</li>
+                    <li class="grid_sorting_button" data-filter="jembut">jembut</li>
+                    <li class="grid_sorting_button" data-filter="instagram">instagram</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product List -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-6 product" data-category="pakaian">
+                <div class="card position-relative">
+                    <div class="card-body">
+                        <img src="https://via.placeholder.com/150" alt="Baju" class="img-fluid mx-auto d-block">
+                    </div>
+                    <div class="card-body bg-light-subtle rounded-bottom">
+                        <h6 class="h5 mb-0"><a href="#" class="text-dark fw-medium fs-16">Baju Trendy</a></h6>
+                        <h4 class="fw-semibold text-dark mt-2">
+                            <span class="text-muted text-decoration-line-through">Rp150.000</span> Rp120.000
+                        </h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 product" data-category="youtube">
+                <div class="card position-relative">
+                    <div class="card-body">
+                        <img src="https://via.placeholder.com/150" alt="YouTube" class="img-fluid mx-auto d-block">
+                    </div>
+                    <div class="card-body bg-light-subtle rounded-bottom">
+                        <h6 class="h5 mb-0"><a href="#" class="text-dark fw-medium fs-16">YouTube Membership</a></h6>
+                        <h4 class="fw-semibold text-dark mt-2">
+                            <span class="text-muted text-decoration-line-through">Rp500.000</span> Rp450.000
+                        </h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 product" data-category="tiktok">
+                <div class="card position-relative">
+                    <div class="card-body">
+                        <img src="https://via.placeholder.com/150" alt="TikTok" class="img-fluid mx-auto d-block">
+                    </div>
+                    <div class="card-body bg-light-subtle rounded-bottom">
+                        <h6 class="h5 mb-0"><a href="#" class="text-dark fw-medium fs-16">TikTok Promotion</a></h6>
+                        <h4 class="fw-semibold text-dark mt-2">
+                            <span class="text-muted text-decoration-line-through">Rp300.000</span> Rp250.000
+                        </h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 product" data-category="instagram">
+                <div class="card position-relative">
+                    <div class="card-body">
+                        <img src="https://via.placeholder.com/150" alt="Instagram" class="img-fluid mx-auto d-block">
+                    </div>
+                    <div class="card-body bg-light-subtle rounded-bottom">
+                        <h6 class="h5 mb-0"><a href="#" class="text-dark fw-medium fs-16">Instagram Ads</a></h6>
+                        <h4 class="fw-semibold text-dark mt-2">
+                            <span class="text-muted text-decoration-line-through">Rp400.000</span> Rp350.000
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const buttons = document.querySelectorAll(".grid_sorting_button");
+            const products = document.querySelectorAll(".product");
+
+            buttons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const filter = button.getAttribute("data-filter");
+
+                    buttons.forEach(btn => btn.classList.remove("active"));
+                    button.classList.add("active");
+
+                    products.forEach(product => {
+                        const category = product.getAttribute("data-category");
+
+                        if (filter === "all" || category === filter) {
+                            product.style.display = "block";
+                        } else {
+                            product.style.display = "none";
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

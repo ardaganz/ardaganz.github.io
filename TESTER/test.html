@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Produk Scroll Horizontal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        /* Scroll menu ke samping */
+        .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            padding: 10px;
+        }
+
+        /* Item menu */
+        .scroll-item {
+            display: inline-block;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            color: #333;
+            margin-right: 10px;
+        }
+
+        /* Item aktif dengan garis merah bawah */
+        .scroll-item.aktif {
+            border-bottom: 2px solid red;
+            font-weight: bold;
+        }
+
+        /* Menyembunyikan semua produk */
+        .produk {
+            display: none;
+            padding: 20px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* Produk aktif ditampilkan */
+        .produk.aktif {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2>Daftar Produk</h2>
+
+    <!-- MENU NAVIGASI -->
+    <div class="scroll-container">
+        <div class="scroll-item aktif" id="v-pills-all-tab" onclick="showProduct('all')">
+            All Product
+        </div>
+        <div class="scroll-item" id="v-pills-produk1-tab" onclick="showProduct('produk1')">
+            Produk 1
+        </div>
+        <div class="scroll-item" id="v-pills-produk2-tab" onclick="showProduct('produk2')">
+            Produk 2
+        </div>
+        <div class="scroll-item" id="v-pills-produk3-tab" onclick="showProduct('produk3')">
+            Produk 3
+        </div>
+        <div class="scroll-item" id="v-pills-produk4-tab" onclick="showProduct('produk4')">
+            Produk 4
+        </div>
+        <div class="scroll-item" id="v-pills-produk5-tab" onclick="showProduct('produk5')">
+            Produk 5
+        </div>
+        <div class="scroll-item" id="v-pills-produk6-tab" onclick="showProduct('produk6')">
+            Produk 6
+        </div>
+    </div>
+
+    <!-- KONTEN PRODUK -->
+    <div class="container">
+        <div id="produk1" class="produk aktif">
+            <h3>Produk 1</h3>
+            <p>Deskripsi produk 1.</p>
+        </div>
+        <div id="produk2" class="produk aktif">
+            <h3>Produk 2</h3>
+            <p>Deskripsi produk 2.</p>
+        </div>
+        <div id="produk3" class="produk aktif">
+            <h3>Produk 3</h3>
+            <p>Deskripsi produk 3.</p>
+        </div>
+        <div id="produk4" class="produk">
+            <h3>Produk 4</h3>
+            <p>Deskripsi produk 4.</p>
+        </div>
+        <div id="produk5" class="produk">
+            <h3>Produk 5</h3>
+            <p>Deskripsi produk 5.</p>
+        </div>
+        <div id="produk6" class="produk">
+            <h3>Produk 6</h3>
+            <p>Deskripsi produk 6.</p>
+        </div>
+    </div>
+
+    <!-- SCRIPT JAVASCRIPT -->
+    <script>
+        function showProduct(product) {
+            // Hapus class aktif dari semua item menu
+            document.querySelectorAll('.scroll-item').forEach(item => {
+                item.classList.remove('aktif');
+            });
+
+            // Tambah class aktif ke menu yang diklik
+            document.querySelector(`#v-pills-${product}-tab`).classList.add('aktif');
+
+            // Tampilkan produk yang sesuai
+            if (product === 'all') {
+                document.querySelectorAll('.produk').forEach(item => {
+                    item.classList.add('aktif');
+                });
+            } else {
+                document.querySelectorAll('.produk').forEach(item => {
+                    item.classList.remove('aktif');
+                });
+
+                document.querySelector(`#${product}`).classList.add('aktif');
+            }
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

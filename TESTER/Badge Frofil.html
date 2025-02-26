@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foto Profil dengan Badge</title>
+    <!-- BOX ICON -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    
+    <style>
+            .container-img-badge {
+            position: relative;
+            display: inline-block;
+        }
+        
+            .profile-badge {
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.4);
+            padding: 3px 6px;
+            border-radius: 12px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+        }
+        .profile-badge img {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            margin-right: 3px;
+        }
+        .profile-badge span {
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .verified {
+            width: 15px;
+            height: 15px;
+            margin-left: 2px;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    
+              <div class="col-md-4">
+                <div class="card card-post card-round">
+                	<div class="container-img-badge">
+                        <img class="card-img-top" src="../assets/img/library-2.png" alt="Card image cap" />
+	                    <div class="profile-badge">
+				            <img src="../assets/img/profile2.jpg" alt="Profile Picture">
+				            <span>Arda Ganz</span>
+				            <i class='bx bxs-badge-check text-info verified'></i>
+				        </div>
+                	</div>
+                  <div class="card-body">
+                    <h3 class="card-title">
+                      <a href="#"> Best Design Resources This Week </a>
+                    </h3>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and make up the bulk of the
+                      card's content.
+                    </p>
+                  </div>
+                       <div class="d-flex align-start mb-1">
+						   <div class="flex-grow-1 ms-2"><span class="badge badge-soft-danger">Published</span> <span class="card-text">...</span></div><span class="card-text text-info blink-text me-2">Read more »</span>
+					   </div>
+                </div>
+              </div>
+	
+    
+    
+    
+    
+</body>
+</html>

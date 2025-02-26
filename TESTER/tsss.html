@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Arrivals</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        .filter {
+            margin-bottom: 10px;
+        }
+
+        .filter button {
+            margin: 5px;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            background: #007BFF;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .filter button:hover {
+            background: #0056b3;
+        }
+
+        
+
+        .product {
+            display: inline-block;
+            width: 200px;
+            margin-right: 10px;
+            text-align: center;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>New Arrivals</h2>
+    <div class="filter">
+        <button onclick="filterProducts('all')">All</button>
+        <button onclick="filterProducts('product1')">Product 1</button>
+        <button onclick="filterProducts('product2')">Product 2</button>
+    </div>
+
+    <div class="scroll-container">
+        <div class="product all product1">
+            <img src="../assets/img/product/shopee/product-1.png" alt="Product 1A">
+            <p>Product 1A</p>
+        </div>
+        <div class="product all product2">
+            <img src="../assets/img/product/shopee/product-1.png" alt="Product 2A">
+            <p>Product 2A</p>
+        </div>
+        <div class="product all product1">
+            <img src="../assets/img/product/shopee/product-1.png" alt="Product 1B">
+            <p>Product 1B</p>
+        </div>
+        <div class="product all product2">
+            <img src="../assets/img/product/shopee/product-1.png" alt="Product 2B">
+            <p>Product 2B</p>
+        </div>
+    </div>
+
+    <script>
+        function filterProducts(category) {
+            let products = document.querySelectorAll('.product');
+            products.forEach(product => {
+                if (category === 'all' || product.classList.contains(category)) {
+                    product.style.display = 'inline-block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

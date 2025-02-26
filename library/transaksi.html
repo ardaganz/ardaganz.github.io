@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Arda Ganz - Transaksi</title>
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
+    <link rel="icon" href="../assets/img/kaiadmin/favicon.ico" type="image/x-icon" />
+
+
+    <!-- Fonts and icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="../assets/js/plugin/webfont/webfont.min.js"></script>
+    <script>
+      WebFont.load({
+        google: { families: ["Public Sans:300,400,500,600,700"] },
+        custom: {
+          families: [
+            "Font Awesome 5 Solid",
+            "Font Awesome 5 Regular",
+            "Font Awesome 5 Brands",
+            "simple-line-icons",
+          ],
+          urls: ["../assets/css/fonts.min.css"],
+        },
+        active: function () {
+          sessionStorage.fonts = true;
+        },
+      });
+    </script>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="../assets/css/kaiadmin.min.css" />
+
+    <!-- CSS Arda -->
+    <link rel="stylesheet" href="../assets/css/ardaStyle.css" />
+
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link rel="stylesheet" href="../assets/css/demo.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar Type Response By AGZ -->
+      <div id="sidebarArda"></div>
+
+      <div class="main-panel">
+        <div class="main-header">
+          <div class="main-header-logo">
+            <!-- Logo Header -->
+            <div class="logo-header" data-background-color="dark">
+              <a href="index.html" class="logo"><img src="../assets/img/kaiadmin/logo_light.svg" alt="navbar brand" class="navbar-brand" height="20" /></a>
+              <div class="nav-toggle">
+                <button class="btn btn-toggle toggle-sidebar">
+                  <i class="gg-menu-right"></i>
+                </button>
+                <button class="btn btn-toggle sidenav-toggler">
+                  <i class="gg-menu-left"></i>
+                </button>
+              </div>
+              <button class="topbar-toggler more">
+                <i class="gg-more-vertical-alt"></i>
+              </button>
+            </div>
+            <!-- End Logo Header -->
+          </div>
+          <!-- Navbar Type Response By AGZ -->
+          <div id="navbarArda"></div>
+        </div><!-- End main-header -->
+
+
+
+
+
+        <div class="container">
+          <div class="page-inner">
+        	<!-- START ROW -->
+            <div class="row">
+          
+          
+          <h3 class="fw-bold mb-1">Dashboard</h3>
+            <div class="page-header">
+              <nav aria-label="breadcrumb">
+				  <ol class="breadcrumb">
+				    <li class="breadcrumb-item"><a class="text-primary" href="../index.html">Home</a></li>
+				    <li class="breadcrumb-item"><a class="text-primary" href="../library.html">Library</a></li>
+				    <li class="breadcrumb-item active" aria-current="page">Transaksi</li>
+				  </ol>
+				</nav>
+            </div>
+            
+            
+            
+            
+            
+                         <div class="col-xl-3 col-lg-4">
+                              <div class="card">
+                                   <div class="card-header">
+                                        <h4 class="card-title">ArdaSaha10</h4>
+                                   </div>
+                                   <div class="card-body">
+                                        <div class="table-responsive">
+                                             <table class="table mb-0">
+                                                  <tbody>
+	                                                    <tr data-bs-toggle="collapse" data-bs-target="#pengeluaran-3" aria-expanded="false" aria-controls="pengeluaran-3">
+                                                            <td class="px-0">
+                                                                 <p class="d-flex mb-0 align-items-center gap-1"><a class="bi bi-cash"> </a> 15/02/2025 : </p>
+                                                            </td>
+                                                            <td class="text-end text-dark fw-medium px-0" data-pengeluaran="110000">Rp110.000</td>
+                                                       </tr>
+											            <!-- Baris yang disembunyikan (Collapse) -->
+											            <tr class="collapse" id="pengeluaran-3">
+											                <td colspan="2">
+											                    <div class="p-3 bg-light">
+											                        <div class="h4 mb-3 text-dark fw-medium px-0">Detail Transaksi:</div>          
+											                            <li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> Rokok :<span class="badge badge-success badge-pill mb-1">Rp20.000</span></li>
+											                            <li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> Rokok :<span class="badge badge-success badge-pill mb-1">Rp40.000</span></li>
+											                            <li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> Minom :<span class="text-muted fw-medium">Rp50.000</span></li>
+											                    </div>
+											                </td>
+											            </tr><!-- END BARIS HIDDEN -->
+                                                        <tr data-bs-toggle="collapse" data-bs-target="#pengeluaran-2" aria-expanded="false" aria-controls="pengeluaran-2">
+                                                            <td class="px-0">
+                                                                 <p class="d-flex mb-0 align-items-center gap-1"><a class="bi bi-cash"> </a> 11/01/2025 : </p>
+                                                            </td>
+                                                            <td class="text-end text-dark fw-medium px-0" data-pengeluaran="75000">Rp75.000</td>
+                                                       </tr>
+											            <!-- Baris yang disembunyikan (Collapse) -->
+											            <tr class="collapse" id="pengeluaran-2">
+											                <td colspan="2">
+											                    <div class="p-3 bg-light">
+											                        <div class="h4 mb-3 text-dark fw-medium px-0">Detail Transaksi:</div>          
+											                            <li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> Rokok :<span class="badge badge-success badge-pill">Rp25.000</span></li>
+											                            <li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> Minyak :<span class="text-muted fw-medium">Rp20.000</span></li>
+											                            <li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> Nongkrong :<span class="text-muted fw-medium">Rp30.000</span></li>
+											                    </div>
+											                </td>
+											            </tr><!-- END BARIS HIDDEN -->
+                                                        <tr data-bs-toggle="collapse" data-bs-target="#pengeluaran-1" aria-expanded="false" aria-controls="pengeluaran-1">
+                                                            <td class="px-0">
+                                                                 <p class="d-flex mb-0 align-items-center gap-1"><a class="bi bi-cash"> </a> 09/01/2025 : </p>
+                                                            </td>
+                                                            <td class="text-end text-dark fw-medium px-0" data-pengeluaran="85000">Rp85.000</td>
+                                                       </tr>
+											            <!-- Baris yang disembunyikan (Collapse) -->
+											            <tr class="collapse" id="pengeluaran-1">
+											                <td colspan="2">
+											                    <div class="p-3 bg-light">
+											                        <div class="h4 mb-3 text-dark fw-medium px-0">Detail Transaksi:</div>
+											                            <li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> Rokok <span class="text-muted fw-medium">Rp25.000</span></li>
+											                            <li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> Minum <span class="text-muted fw-medium">Rp50.000</span></li>
+											                            <li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> Bombon <span class="text-muted fw-medium">Rp10.000</span></li>
+																		
+											                    </div>
+											                </td>
+											            </tr><!-- END BARIS HIDDEN -->
+                                                        
+                                                  </tbody>
+                                             </table>
+                                        </div>
+                                   </div>
+                                   <div class="card-footer d-flex align-items-center justify-content-between bg-light-subtle">
+                                        <div>
+                                             <p class="fw-medium text-dark mb-0">Total Amount</p>
+                                        </div>
+                                        <div>
+                                             <p class="fw-medium text-dark mb-0" id="totalPengeluaran">Rp164.000</p>
+                                        </div>
+                                   </div>
+                              </div>              
+                              
+                              
+                              
+                              
+                              
+                              
+                         <div class="col-xl-3 col-lg-4">
+                              <div class="card">
+                                   <div class="card-header">
+                                        <h4 class="card-title">Invented 31/01/2025 12.45</h4>
+                                   </div>
+                                   <div class="card-body">
+                                        <div class="table-responsive">
+                                             <table class="table mb-0">
+                                                  <tbody>
+                                                  	 
+	                                                   <tr data-bs-toggle="collapse" data-bs-target="#transaksi-4" aria-expanded="false" aria-controls="transaksi-4">
+                                                            <td class="px-0">
+                                                                 <p class="d-flex mb-0 align-items-center gap-1"><a class="bi bi-calendar-heart"> </a> 14/02/2025 : </p>
+                                                            </td>
+                                                            <td class="text-end text-dark fw-medium px-0">Rp50.000</td>
+                                                       </tr>
+											            <!-- Baris yang disembunyikan (Collapse) -->
+											            <tr class="collapse" id="transaksi-4">
+											                <td colspan="2">
+											                    <div class="p-3 bg-light">
+											                        <div class="h4 mb-3 text-dark fw-medium px-0">Detail Transaksi:</div>          
+											                            <li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> Bouqet :<span class="badge badge-primary badge-pill">Rp35.000</span></li>
+											                            <li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> Minyak :<span class="text-muted fw-medium">Rp10.000</span></li>
+																		<div class="row image-gallery">
+																			<a href="../assets/img/transaksi/ucisahara/valentine.jpg" class="col-6 col-md-3 mb-4">
+																				<img src="../assets/img/transaksi/cash.png" class="img-fluid">
+																			</a>
+																			<a href="../assets/img/transaksi/ucisahara/bouqet.jpg" class="col-6 col-md-3 mb-4">
+																				<img src="../assets/img/transaksi/cash.png" class="img-fluid">
+																			</a>
+																		</div>
+											                    </div>
+											                </td>
+											           </tr><!-- END BARIS HIDDEN -->
+											           <tr data-bs-toggle="collapse" data-bs-target="#transaksi-3" aria-expanded="false" aria-controls="transaksi-3">
+                                                            <td class="px-0">
+                                                                 <p class="d-flex mb-0 align-items-center gap-1"><a class="bi bi-calendar-heart"> </a> 11/02/2025 : </p>
+                                                            </td>
+                                                            <td class="text-end text-dark fw-medium px-0">Rp50.000</td>
+                                                       </tr>
+											            <!-- Baris yang disembunyikan (Collapse) -->
+											            <tr class="collapse" id="transaksi-3">
+											                <td colspan="2">
+											                    <div class="p-3 bg-light">
+											                        <div class="h4 mb-3 text-dark fw-medium px-0">Detail Transaksi:</div>          
+											                            <li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> Penerima :<span class="badge badge-primary badge-pill">Kristina Hrp</span></li>
+											                            <li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> Nomor :<span class="text-muted fw-medium">083142759502</span></li>
+											                            <li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> Keperluan :<span class="text-muted fw-medium">Hitamin Rambut</span></li>
+											                            <li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> Id Transaksi :<span class="text-muted fw-medium">710627</span></li>
+																		<div class="row image-gallery">
+																			<a href="../assets/img/transaksi/ucisahara/transaksi-1.png" class="col-6 col-md-3 mb-4">
+																				<img src="../assets/img/transaksi/cash.png" class="img-fluid">
+																			</a>
+																			<a href="../assets/img/transaksi/ucisahara/chat-1.png" class="col-6 col-md-3 mb-4">
+																				<img src="../assets/img/transaksi/cash.png" class="img-fluid">
+																			</a>
+																		</div>
+											                    </div>
+											                </td>
+											           </tr><!-- END BARIS HIDDEN -->
+                                                       <tr data-bs-toggle="collapse" data-bs-target="#transaksi-2" aria-expanded="false" aria-controls="transaksi-2">
+                                                            <td class="px-0">
+                                                                 <p class="d-flex mb-0 align-items-center gap-1"><a class="bi bi-calendar-heart"> </a> 31/01/2025 : </p>
+                                                            </td>
+                                                            <td class="text-end text-dark fw-medium px-0">Rp20.000</td>
+                                                       </tr>
+											            <!-- Baris yang disembunyikan (Collapse) -->
+											            <tr class="collapse" id="transaksi-2">
+											                <td colspan="2">
+											                    <div class="p-3 bg-light">
+											                        <div class="h4 mb-3 text-dark fw-medium px-0">Detail Transaksi:</div>          
+											                            <li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> Lokasi :<span class="badge badge-danger badge-pill">T.Lagan</span></li>
+											                            <li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> Waktu :<span class="text-muted fw-medium">17.00 WIB</span></li>
+											                            <li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> Keperluan :<span class="text-muted fw-medium">Bayar paket</span></li>
+											                            <li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> Id Transaksi :<span class="text-muted fw-medium">310120251700-2</span></li>
+																		<div class="row image-gallery">
+																			<a href="../assets/img/transaksi/cash.png" class="col-6 col-md-3 mb-4">
+																				<img src="../assets/img/transaksi/cash.png" class="img-fluid">
+																			</a>
+																			<a href="../assets/img/transaksi/cash.png" class="col-6 col-md-3 mb-4">
+																				<img src="../assets/img/transaksi/cash.png" class="img-fluid">
+																			</a>
+																		</div>
+											                    </div>
+											                </td>
+											            </tr><!-- END BARIS HIDDEN -->
+                                                        <tr data-bs-toggle="collapse" data-bs-target="#transaksi-1" aria-expanded="false" aria-controls="transaksi-1">
+                                                            <td class="px-0">
+                                                                 <p class="d-flex mb-0 align-items-center gap-1"><a class="bi bi-calendar-heart"> </a> 30/01/2025 : </p>
+                                                            </td>
+                                                            <td class="text-end text-dark fw-medium px-0">Rp55.000</td>
+                                                       </tr>
+											            <!-- Baris yang disembunyikan (Collapse) -->
+											            <tr class="collapse" id="transaksi-1">
+											                <td colspan="2">
+											                    <div class="p-3 bg-light">
+											                        <div class="h4 mb-3 text-dark fw-medium px-0">Detail Transaksi:</div>          
+											                            <li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> Lokasi :<span class="badge badge-success badge-pill">Rumahku</span></li>
+											                            <li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> Makan :<span class="text-muted fw-medium">Bubur Kacang</span></li>
+											                            <li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> Minum :<span class="text-muted fw-medium">Rp10.000</span></li>
+											                            <li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> Baju Putih :<span class="text-muted fw-medium">Rp45.000</span></li>
+											                            <li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> Waktu S/D :<span class="text-muted fw-medium">12.30 - 17.00 WIB</span></li>
+																		<li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> Id Transaksi :<span class="text-muted fw-medium">300120251400</span></li>
+																		<div class="row image-gallery">
+																			<a href="../assets/img/transaksi/ucisahara/product-1-1.png" class="col-6 col-md-3 mb-4">
+																				<img src="../assets/img/transaksi/cash.png" class="img-fluid">
+																			</a>
+																			<a href="../assets/img/transaksi/ucisahara/img-1.jpg" class="col-6 col-md-3 mb-4">
+																				<img src="../assets/img/transaksi/transaksi.png" class="img-fluid">
+																			</a>
+																		</div>
+											                    </div>
+											                </td>
+											            </tr><!-- END BARIS HIDDEN -->
+                                                        <tr data-bs-toggle="collapse" data-bs-target="#transaksi-0" aria-expanded="false" aria-controls="transaksi-0">
+                                                            <td class="px-0">
+                                                                 <p class="d-flex mb-0 align-items-center gap-1"><a class="bi bi-cash"> </a> 29/01/2025 : </p>
+                                                            </td>
+                                                            <td class="text-end text-dark fw-medium px-0">Rp39.000</td>
+                                                       </tr>
+											            <!-- Baris yang disembunyikan (Collapse) -->
+											            <tr class="collapse" id="transaksi-0">
+											                <td colspan="2">
+											                    <div class="p-3 bg-light">
+											                        <div class="h4 mb-3 text-dark fw-medium px-0">Detail Transaksi:</div>
+											                            <li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> IsiTeks <span class="badge badge-success badge-pill mb-1">Rp00.000</span></li>
+											                            <li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> 05/02/2025 01.54 <span class="badge badge-success badge-pill mb-1">Rp13.000</span></li>
+											                            <li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> 31/01/2025 12.17 <span class="badge badge-success badge-pill mb-1">Rp13.000</span></li>
+																		<li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> 29/01/2025 00.36 <span class="badge badge-success badge-pill mb-1">Rp13.000</span></li>
+																		<li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> Id Transaksi <span class="text-muted fw-medium">293105-0102-2025</span></li>
+																		<li class="list-group-item d-flex justify-content-between align-items-center fw-medium"> Sub Total : <span class="badge badge-danger badge-pill mb-1">Rp39.000</span></li>
+																		<div class="row image-gallery">
+																			<a href="../assets/img/transaksi/Axis_logo_2015.png" class="col-6 col-md-3 mb-4">
+																				<img src="../assets/img/transaksi/cash.png" class="img-fluid">
+																			</a>
+																			<a href="../assets/img/transaksi/Axis_logo_2015.png" class="col-6 col-md-3 mb-4">
+																				<img src="../assets/img/transaksi/cash.png" class="img-fluid">
+																			</a>
+																		</div>
+											                    </div>
+											                </td>
+											            </tr><!-- END BARIS HIDDEN -->
+                                                        
+                                                  </tbody>
+                                             </table>
+                                        </div>
+                                   </div>
+                                   <div class="card-footer d-flex align-items-center justify-content-between bg-light-subtle">
+                                        <div>
+                                             <p class="fw-medium text-dark mb-0">Total Amount</p>
+                                        </div>
+                                        <div>
+                                             <p class="fw-medium text-dark mb-0">Rp214.000</p>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+              
+              
+              
+              
+            </div><!-- END ROW -->
+          </div><!-- END page-inner -->
+        </div><!-- END container -->
+
+
+    
+
+          <!-- ========== Footer Start ==========
+          <footer class="footer">
+              <div class="container-fluid">
+                  <div class="row">
+                      <div class="col-12 text-center">
+                         &copy; <script>document.write(new Date().getFullYear())</script> ThemeKita. Crafted by <i class="bi bi-heart-fill text-danger"></i> <a
+                              href="https://1.envato.market/techzaa" class="fw-bold footer-text-running" target="_blank">Arda Ganz</a>
+                      </div>
+                  </div>
+              </div>
+          </footer>
+          ========== Footer End ========== -->
+
+        <footer class="footer">
+          <div class="container-fluid d-flex justify-content-between">
+            <div class="copyright"> &copy; 2024 <b><a href="contact.html" class="fw-bold footer-text-running" target="_blank"><i class="bi bi-heart-fill text-danger"></i> Arda Ganz</a></b> All rights reserved </div>
+          </div>
+        </footer>
+
+        
+        
+        
+      </div> <!-- END main-panel -->
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	<!-- Custom template | don't include it in your project! -->
+	<div class="custom-template">
+	  <div class="title">Settings</div>
+	  <div class="custom-content">
+	    <div class="switcher">
+	
+	      <!-- Logo Header -->
+	      <div class="switch-block">
+	        <h4>Logo Header</h4>
+	        <div class="btnSwitch">
+	          <button type="button" class="selected changeLogoHeaderColor" data-color="dark"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="blue"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="purple"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="light-blue"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="green"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="orange"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="red"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="white"></button>
+	          <br />
+	          <button type="button" class="changeLogoHeaderColor" data-color="dark2"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="blue2"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="purple2"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="light-blue2"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="green2"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="orange2"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="red2"></button>
+	        </div>
+	      </div>
+	
+	      <!-- Navbar Header -->
+	      <div class="switch-block">
+	        <h4>Navbar Header</h4>
+	        <div class="btnSwitch">
+	          <button type="button" class="changeTopBarColor" data-color="dark"></button>
+	          <button type="button" class="changeTopBarColor" data-color="blue"></button>
+	          <button type="button" class="changeTopBarColor" data-color="purple"></button>
+	          <button type="button" class="changeTopBarColor" data-color="light-blue"></button>
+	          <button type="button" class="changeTopBarColor" data-color="green"></button>
+	          <button type="button" class="changeTopBarColor" data-color="orange"></button>
+	          <button type="button" class="changeTopBarColor" data-color="red"></button>
+	          <button type="button" class="selected changeTopBarColor" data-color="white"></button>
+	          <br />
+	          <button type="button" class="changeTopBarColor" data-color="dark2"></button>
+	          <button type="button" class="changeTopBarColor" data-color="blue2"></button>
+	          <button type="button" class="changeTopBarColor" data-color="purple2"></button>
+	          <button type="button" class="changeTopBarColor" data-color="light-blue2"></button>
+	          <button type="button" class="changeTopBarColor" data-color="green2"></button>
+	          <button type="button" class="changeTopBarColor" data-color="orange2"></button>
+	          <button type="button" class="changeTopBarColor" data-color="red2"></button>
+	        </div>
+	      </div>
+	
+	      <!-- Sidebar -->
+	      <div class="switch-block">
+	        <h4>Sidebar</h4>
+	        <div class="btnSwitch">
+	          <button type="button" class="changeSideBarColor" data-color="white"></button>
+	          <button type="button" class="selected changeSideBarColor" data-color="dark"></button>
+	          <button type="button" class="changeSideBarColor" data-color="dark2"></button>
+	        </div>
+	      </div>
+	
+	    </div>
+	  </div>
+	  <div class="custom-toggle">
+	    <i class="icon-settings"></i>
+	  </div>
+	</div><!-- End Custom template -->
+    </div><!-- END wraper -->
+      
+    
+
+
+
+
+
+
+    
+    
+    
+    <!--   Core JS Files   -->
+    <script src="../assets/js/core/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/core/bootstrap.min.js"></script>
+
+    <!-- jQuery Scrollbar -->
+    <script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="../assets/js/plugin/jquery.magnific-popup/jquery.magnific-popup.min.js"></script>
+
+
+    <!-- Kaiadmin JS -->
+    <script src="../assets/js/kaiadmin.min.js"></script>
+    <!-- Kaiadmin DEMO methods, don't include it in your project! -->
+    <script src="../assets/js/setting-demo.js"></script>
+    
+    
+    
+    <script>
+		// This will create a single gallery from all elements that have class "gallery-item"
+		$('.image-gallery').magnificPopup({
+			delegate: 'a', 
+			type: 'image',
+			removalDelay: 300,
+			gallery:{
+				enabled:true,
+			},
+			mainClass: 'mfp-with-zoom', 
+			zoom: {
+				enabled: true, 
+				duration: 300,
+				easing: 'ease-in-out',
+				opener: function(openerElement) {
+					return openerElement.is('img') ? openerElement : openerElement.find('img');
+				}
+			}
+		});
+	</script>
+    
+    <script>
+    function formatRupiah(angka) {
+        return new Intl.NumberFormat("id-ID", {
+            style: "currency",
+            currency: "IDR",
+            minimumFractionDigits: 0
+        }).format(angka);
+    }
+
+    function hitungTotal() {
+        let total = 0;
+        document.querySelectorAll(".px-0").forEach(item => {
+            total += parseInt(item.getAttribute("data-pengeluaran")) || 0;
+        });
+
+        document.getElementById("totalPengeluaran").textContent = formatRupiah(total);
+    }
+
+    // Panggil fungsi untuk menampilkan total saat halaman dimuat
+    hitungTotal();
+</script>
+
+    
+    
+
+
+  <!-- Script Type Response By Arda Ganz -->
+  <script src="../assets/js/response-2.js"></script>
+  <!-- Script Full Screen By Arda Ganz -->
+  <script src="../assets/js/fullscreen.js"></script>
+    
+    
+  </body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Arda Ganz - Email</title>
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
+    <link rel="icon" href="assets/img/kaiadmin/favicon.ico" type="image/x-icon" />
+
+
+    <!-- Fonts and icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="assets/js/plugin/webfont/webfont.min.js"></script>
+    <script>
+      WebFont.load({
+        google: { families: ["Public Sans:300,400,500,600,700"] },
+        custom: {
+          families: [
+            "Font Awesome 5 Solid",
+            "Font Awesome 5 Regular",
+            "Font Awesome 5 Brands",
+            "simple-line-icons",
+          ],
+          urls: ["assets/css/fonts.min.css"],
+        },
+        active: function () {
+          sessionStorage.fonts = true;
+        },
+      });
+    </script>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="assets/css/kaiadmin.min.css" />
+
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link rel="stylesheet" href="assets/css/demo.css" />
+    <!-- STYLE ARDA -->
+    <link rel="stylesheet" href="assets/css/ardaStyle.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar Type Response By AGZ -->
+      <div id="sidebarArda"></div>
+
+      <div class="main-panel">
+        <div class="main-header">
+          <div class="main-header-logo">
+            <!-- Logo Header -->
+            <div class="logo-header" data-background-color="dark">
+              <a href="index.html" class="logo"><img src="assets/img/kaiadmin/logo_light.svg" alt="navbar brand" class="navbar-brand" height="20" /></a>
+              <div class="nav-toggle">
+                <button class="btn btn-toggle toggle-sidebar">
+                  <i class="gg-menu-right"></i>
+                </button>
+                <button class="btn btn-toggle sidenav-toggler">
+                  <i class="gg-menu-left"></i>
+                </button>
+              </div>
+              <button class="topbar-toggler more">
+                <i class="gg-more-vertical-alt"></i>
+              </button>
+            </div>
+            <!-- End Logo Header -->
+          </div>
+          <!-- Navbar Type Response By AGZ -->
+          <div id="navbarArda"></div>
+        </div><!-- End main-header -->
+
+
+
+
+
+        <div class="container">
+          <div class="page-inner">
+          	
+          
+            <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
+              <div>
+                <h3 class="fw-bold mb-3">Email</h3>
+              </div>
+            </div>
+            
+            
+            
+            
+            <!-- ADD YOUR CODE -->
+            
+			<div class="row">
+				<div class="col-md-12">
+					<div class="page-with-aside mail-wrapper bg-white">	
+						<div class="page-content mail-content">
+							<div class="email-head d-lg-flex d-block">
+								<div class="card-title"><i class="icon-pencil"> </i>Compose New Message</div>
+							</div>
+							<div class="email-compose-fields">
+								<form>
+									<div class="form-group row">
+										<label for="to" class="col-form-label col-md-1">To :</label>
+										<div class="col-md-11">
+											<input type="text" class="form-control" id="to" name="to" placeholder="Masukkan email penerima" required>
+											<span class="error" id="toError"></span>
+										</div>
+									</div>
+									<div class="form-group row">
+										<label for="cc" class="col-form-label col-md-1">Cc :</label>
+										<div class="col-md-11">
+											<input type="text" class="form-control" id="cc" name="cc" placeholder="Masukkan email CC (opsional)">
+											<span class="error" id="ccError"></span>
+										</div>
+									</div>
+									<div class="form-group row">
+										<label for="subject" class="col-form-label col-md-1">Subject :</label>
+										<div class="col-md-11">
+											<input type="text" class="form-control" id="subject" name="subject" placeholder="Masukkan subjek email" required>
+											<span class="error" id="subjectError"></span>
+										</div>
+									</div>
+								</form>
+							</div>
+							<div class="email-editor">
+								<div id="editor"></div>
+								<span class="error" id="editorError"></span>
+								<div class="email-action">
+									<button class="btn btn-primary" id="sendEmail">Send</button>
+									<button class="btn btn-danger">Cancel</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+	
+
+          </div><!-- END page-inner -->
+        </div><!-- END container -->
+
+
+
+
+
+        
+        <footer class="footer">
+          <div class="container-fluid d-flex justify-content-between">
+            <div class="copyright"> &copy; <script>document.write(new Date().getFullYear())</script> <b><a href="contact.html" class="fw-bold footer-text-running" target="_blank" id="copyright">Arda Ganz</a></b> All rights reserved </div>
+          </div>
+        </footer>
+      </div> <!-- END main-panel -->
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	<!-- Custom template | don't include it in your project! -->
+	<div class="custom-template">
+	  <div class="title">Settings</div>
+	  <div class="custom-content">
+	    <div class="switcher">
+	
+	      <!-- Logo Header -->
+	      <div class="switch-block">
+	        <h4>Logo Header</h4>
+	        <div class="btnSwitch">
+	          <button type="button" class="selected changeLogoHeaderColor" data-color="dark"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="blue"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="purple"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="light-blue"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="green"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="orange"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="red"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="white"></button>
+	          <br />
+	          <button type="button" class="changeLogoHeaderColor" data-color="dark2"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="blue2"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="purple2"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="light-blue2"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="green2"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="orange2"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="red2"></button>
+	        </div>
+	      </div>
+	
+	      <!-- Navbar Header -->
+	      <div class="switch-block">
+	        <h4>Navbar Header</h4>
+	        <div class="btnSwitch">
+	          <button type="button" class="changeTopBarColor" data-color="dark"></button>
+	          <button type="button" class="changeTopBarColor" data-color="blue"></button>
+	          <button type="button" class="changeTopBarColor" data-color="purple"></button>
+	          <button type="button" class="changeTopBarColor" data-color="light-blue"></button>
+	          <button type="button" class="changeTopBarColor" data-color="green"></button>
+	          <button type="button" class="changeTopBarColor" data-color="orange"></button>
+	          <button type="button" class="changeTopBarColor" data-color="red"></button>
+	          <button type="button" class="selected changeTopBarColor" data-color="white"></button>
+	          <br />
+	          <button type="button" class="changeTopBarColor" data-color="dark2"></button>
+	          <button type="button" class="changeTopBarColor" data-color="blue2"></button>
+	          <button type="button" class="changeTopBarColor" data-color="purple2"></button>
+	          <button type="button" class="changeTopBarColor" data-color="light-blue2"></button>
+	          <button type="button" class="changeTopBarColor" data-color="green2"></button>
+	          <button type="button" class="changeTopBarColor" data-color="orange2"></button>
+	          <button type="button" class="changeTopBarColor" data-color="red2"></button>
+	        </div>
+	      </div>
+	
+	      <!-- Sidebar -->
+	      <div class="switch-block">
+	        <h4>Sidebar</h4>
+	        <div class="btnSwitch">
+	          <button type="button" class="changeSideBarColor" data-color="white"></button>
+	          <button type="button" class="selected changeSideBarColor" data-color="dark"></button>
+	          <button type="button" class="changeSideBarColor" data-color="dark2"></button>
+	        </div>
+	      </div>
+	
+	    </div>
+	  </div>
+	  <div class="custom-toggle">
+	    <i class="icon-settings"></i>
+	  </div>
+	</div><!-- End Custom template -->
+    </div><!-- END wraper -->
+      
+    
+
+
+
+
+
+
+    
+    
+    
+	<!--   Core JS Files   -->
+	<script src="assets/js/core/jquery-3.7.1.min.js"></script>
+	<script src="assets/js/core/popper.min.js"></script>
+	<script src="assets/js/core/bootstrap.min.js"></script>
+	<!-- jQuery Scrollbar -->
+	<script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+	<script src="assets/js/plugin/summernote/summernote-lite.min.js"></script>
+	<!-- Kaiadmin JS -->
+	<script src="assets/js/kaiadmin.min.js"></script>
+	<!-- Kaiadmin DEMO methods, don't include it in your project! -->
+	<script src="assets/js/setting-demo.js"></script>
+	<script>
+		$('#editor').summernote({
+			fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New'],
+			tabsize: 2,
+			height: 300
+		});
+	</script>
+
+
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // Ambil elemen
+        const sendButton = document.getElementById("sendEmail");
+        const toField = document.getElementById("to");
+        const ccField = document.getElementById("cc");
+        const subjectField = document.getElementById("subject");
+        const editorField = document.getElementById("editor");
+
+        const toError = document.getElementById("toError");
+        const ccError = document.getElementById("ccError");
+        const subjectError = document.getElementById("subjectError");
+        const editorError = document.getElementById("editorError");
+
+        // Fungsi validasi email
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Event klik tombol Send
+        sendButton.addEventListener("click", (event) => {
+            event.preventDefault();
+            let isValid = true;
+
+            // Reset pesan error
+            toError.textContent = "";
+            ccError.textContent = "";
+            subjectError.textContent = "";
+            editorError.textContent = "";
+
+            // Validasi "To"
+            if (!toField.value || !isValidEmail(toField.value)) {
+                toError.textContent = "Email penerima tidak valid atau kosong.";
+                isValid = false;
+            }
+
+            // Validasi "Cc" (opsional)
+            if (ccField.value && !isValidEmail(ccField.value)) {
+                ccError.textContent = "Email CC tidak valid.";
+                isValid = false;
+            }
+
+            // Validasi "Subject"
+            if (!subjectField.value.trim()) {
+                subjectError.textContent = "Subjek email tidak boleh kosong.";
+                isValid = false;
+            }
+
+            // Ambil konten editor
+            let editorContent = ""; // Default jika editor belum terpasang
+            if (typeof CKEDITOR !== "undefined") {
+                editorContent = CKEDITOR.instances.editor.getData();
+            } else if (typeof tinymce !== "undefined") {
+                editorContent = tinymce.get('editor').getContent();
+            }
+            
+            // Validasi isi "Editor" (gunakan innerText untuk editor teks biasa)
+            if (!editorField.innerText.trim()) {
+                editorError.textContent = "Isi pesan tidak boleh kosong.";
+                isValid = false;
+            }
+
+            // Jika valid, buat mailto URL
+            if (isValid) {
+                const to = encodeURIComponent(toField.value);
+                const cc = encodeURIComponent(ccField.value || "");
+                const subject = encodeURIComponent(subjectField.value);
+                const body = encodeURIComponent(editorField.innerText.trim());
+
+                const mailtoLink = `mailto:${to}?cc=${cc}&subject=${subject}&body=${body}`;
+
+                // Buka aplikasi email
+                window.location.href = mailtoLink;
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+  <!-- Script Copyright By Arda Ganz -->
+  <script src="settings/copyright.js"></script>
+  <!-- Script Type Response By Arda Ganz -->
+  <script src="assets/js/response.js"></script>
+  <!-- Script Full Screen By Arda Ganz -->
+  <script src="assets/js/fullscreen.js"></script>
+    
+    
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input dengan Tombol Tempel di Dalamnya</title>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #4a00e0, #ff00ff);
+        }
+        .input-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 350px;
+        }
+        input {
+            width: 100%;
+            padding: 12px 50px 12px 15px;
+            border-radius: 10px;
+            border: none;
+            font-size: 16px;
+            outline: none;
+            background: linear-gradient(135deg, #e6dfff, #f5c7f7);
+            color: #333;
+        }
+        .paste-button {
+            position: absolute;
+            right: 10px;
+            background: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .paste-button i {
+            font-size: 18px;
+            margin-right: 5px;
+            color: #4a00e0;
+        }
+        .paste-button span {
+            color: #4a00e0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="input-container">
+        <input type="text" id="urlInput" placeholder="Tempel tautan video di sini">
+        <button class="paste-button" onclick="pasteFromClipboard()">
+            <i class="bi bi-clipboard"></i>
+            <span>Tempel</span>
+        </button>
+    </div>
+
+    <script>
+        async function pasteFromClipboard() {
+            try {
+                const text = await navigator.clipboard.readText();
+                document.getElementById('urlInput').value = text;
+            } catch (err) {
+                alert("Gagal mengambil teks dari clipboard! Pastikan izin diberikan.");
+                console.error(err);
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Gambar ke ImgBB</title>
+</head>
+<body>
+    <h2>Upload Gambar dari Penyimpanan ke ImgBB</h2>
+    <input type="file" id="fileInput" accept="image/*">
+    <button onclick="uploadImage()">Upload</button>
+    <p id="status"></p>
+    <img id="preview" src="" alt="Preview" width="300" style="display:none;">
+    <p><a id="downloadLink" href="#" target="_blank" style="display:none;">Download Gambar</a></p>
+
+    <script>
+        const imgbbApiKey = "2df4af448fce0a17662bf71a3445ec8d"; // Ganti dengan API Key ImgBB
+
+        async function uploadImage() {
+            let fileInput = document.getElementById("fileInput");
+            let file = fileInput.files[0];
+
+            if (!file) {
+                alert("Pilih gambar terlebih dahulu!");
+                return;
+            }
+
+            document.getElementById("status").innerText = "Mengunggah ke ImgBB...";
+            
+            let formData = new FormData();
+            formData.append("image", file);
+
+            try {
+                let uploadResponse = await fetch(`https://api.imgbb.com/1/upload?key=${imgbbApiKey}`, {
+                    method: "POST",
+                    body: formData
+                });
+
+                let uploadData = await uploadResponse.json();
+
+                if (uploadData.success) {
+                    let imageUrl = uploadData.data.url;
+
+                    // Tampilkan gambar & link download
+                    document.getElementById("preview").src = imageUrl;
+                    document.getElementById("preview").style.display = "block";
+                    document.getElementById("downloadLink").href = imageUrl;
+                    document.getElementById("downloadLink").style.display = "block";
+                    document.getElementById("downloadLink").innerText = "Download Gambar";
+                    document.getElementById("status").innerText = "Gambar berhasil diunggah!";
+                } else {
+                    document.getElementById("status").innerText = "Gagal mengunggah gambar.";
+                }
+            } catch (error) {
+                document.getElementById("status").innerText = "Terjadi kesalahan: " + error.message;
+            }
+        }
+    </script>
+</body>
+</html>

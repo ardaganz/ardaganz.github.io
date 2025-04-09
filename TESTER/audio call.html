@@ -1,0 +1,98 @@
+<audio id="callSound" loop>
+    <source src="tuuut.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Tombol Video Call -->
+<li class="list-inline-item fs-20 dropdown">
+    <a href="javascript:void(0);" class="text-dark" data-bs-toggle="modal" data-bs-target="#videocall" id="videocallBtn">
+        <i class="bx bx-video"></i>
+    </a>
+</li>
+
+<!-- Tombol Call Biasa -->
+<li class="list-inline-item fs-20 dropdown">
+    <a href="javascript:void(0);" class="text-dark" data-bs-toggle="modal" data-bs-target="#voicecall" id="voicecallBtn">
+        <i class="bx bx-phone"></i>
+    </a>
+</li>
+
+<!-- Modal Video Call -->
+<div class="modal fade" id="videocall" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Video Call</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Isi modal video call -->
+                <button class="btn btn-danger" id="endVideoCall">End Call</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Call Biasa -->
+<div class="modal fade" id="voicecall" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Voice Call</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Isi modal call biasa -->
+                <button class="btn btn-danger" id="endVoiceCall">End Call</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Ambil elemen audio dan tombol call
+    var callSound = document.getElementById("callSound");
+    var audioVideoCallBtn = document.getElementById("videocallBtn"); // Video Call
+    var voiceCallBtn = document.getElementById("voicecallBtn"); // Voice Call
+    var videoCallModal = document.getElementById("videocall"); // Audio Mati saat modal bagian luar diklik
+    var voiceCallModal = document.getElementById("voicecall"); // Audio Mati saat modal bagian luar diklik
+    var endVideoCallBtn = document.getElementById("endVideoCall"); // Audio Mati saat klik button
+    var endVoiceCallBtn = document.getElementById("endVoiceCall"); // Audio Mati saat klik button
+
+    // Saat tombol video call diklik, putar suara
+    audioVideoCallBtn.addEventListener("click", function() {
+        callSound.play();
+    });
+
+    // Saat tombol voice call diklik, putar suara
+    voiceCallBtn.addEventListener("click", function() {
+        callSound.play();
+    });
+
+    // Saat salah satu modal ditutup, hentikan suara
+    videoCallModal.addEventListener("hidden.bs.modal", function () {
+        stopCallSound();
+    });
+
+    voiceCallModal.addEventListener("hidden.bs.modal", function () {
+        stopCallSound();
+    });
+
+    // Saat tombol "End Call" diklik, hentikan suara & tutup modal
+    endVideoCallBtn.addEventListener("click", function () {
+        stopCallSound();
+        var videoModal = bootstrap.Modal.getInstance(videoCallModal);
+        videoModal.hide(); // Menutup modal video call
+    });
+
+    endVoiceCallBtn.addEventListener("click", function () {
+        stopCallSound();
+        var voiceModal = bootstrap.Modal.getInstance(voiceCallModal);
+        voiceModal.hide(); // Menutup modal voice call
+    });
+
+    // Fungsi untuk menghentikan suara
+    function stopCallSound() {
+        callSound.pause();
+        callSound.currentTime = 0;
+    }
+</script>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masukkan Password</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- SweetAlert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container text-center">
+        <h2>Silakan Masukkan Password</h2>
+        
+        <!-- Tombol untuk memasukkan password -->
+        <button id="btn-password-1" class="btn btn-primary mt-3" onclick="showPasswordPrompt()">Masukkan Password</button>
+
+        <!-- Kode yang akan muncul jika password benar -->
+        <div id="secret-code-1" class="mt-4 hidden">
+            <h4 class="text-success">Kode Rahasia:</h4>
+            <pre class="p-3 border bg-light">1234-5678-ABCD-EFGH</pre>
+        </div>
+    </div>
+
+    <script>
+        // Password yang benar
+        const correctPassword = "an";
+
+        function showPasswordPrompt() {
+            swal({
+                title: "Masukkan Password",
+                content: {
+                    element: "input",
+                    attributes: {
+                        placeholder: "Ketik password di sini...",
+                        type: "password",
+                        id: "input-field",
+                        className: "form-control"
+                    }
+                },
+                buttons: {
+                    cancel: {
+                        text: "Batal",
+                        visible: true,
+                        className: "btn btn-danger"
+                    },
+                    confirm: {
+                        text: "Submit",
+                        className: "btn btn-success"
+                    }
+                }
+            }).then((value) => {
+                if (value !== null) { // Jika user tidak membatalkan
+                    if (value === correctPassword) {
+                        swal({
+                            title: "Berhasil!",
+                            text: "Password benar!",
+                            icon: "success",
+                            buttons: {
+                                confirm: {
+                                    text: "OK",
+                                    className: "btn btn-success"
+                                }
+                            }
+                        });
+
+                        // Menampilkan kode rahasia
+                        document.getElementById("secret-code-1").classList.remove("hidden");
+
+                        // Menghilangkan tombol input password
+                        document.getElementById("btn-password-1").classList.add("hidden");
+                    } else {
+                        swal({
+                            title: "Gagal!",
+                            text: "Password salah, coba lagi!",
+                            icon: "error",
+                            buttons: {
+                                confirm: {
+                                    text: "Coba Lagi",
+                                    className: "btn btn-danger"
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+        }
+    </script>
+
+
+</body>
+</html>

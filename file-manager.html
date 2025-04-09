@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Arda Ganz - APPS FILE MANAGER</title>
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
+    <link rel="icon" href="assets/img/kaiadmin/favicon.ico" type="image/x-icon" />
+    <script src="assets/js/plugin/webfont/webfont.min.js"></script>
+    <script>
+      WebFont.load({
+        google: { families: ["Public Sans:300,400,500,600,700"] },
+        custom: {
+          families: [
+            "Font Awesome 5 Solid",
+            "Font Awesome 5 Regular",
+            "Font Awesome 5 Brands",
+            "simple-line-icons",
+          ],
+          urls: ["assets/css/fonts.min.css"],
+        },
+        active: function () {
+          sessionStorage.fonts = true;
+        },
+      });
+    </script>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="assets/css/kaiadmin.min.css" />
+
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link rel="stylesheet" href="assets/css/demo.css" />
+    <!-- STYLE ARDA -->
+    <link rel="stylesheet" href="assets/css/ardaStyle.css" />
+    
+    <!-- Fonts and icons -->
+    <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="assets/css/boxicons.min.css" />
+    <link rel="stylesheet" href="assets/css/materialdesignicons.min.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar Type Response By AGZ -->
+      <div id="sidebarArda"></div>
+
+      <div class="main-panel">
+        <div class="main-header">
+          <div class="main-header-logo">
+            <!-- Logo Header -->
+            <div class="logo-header" data-background-color="dark">
+              <a href="index.html" class="logo"><img src="assets/img/kaiadmin/logo_light.svg" alt="navbar brand" class="navbar-brand" height="20" /></a>
+              <div class="nav-toggle">
+                <button class="btn btn-toggle toggle-sidebar">
+                  <i class="gg-menu-right"></i>
+                </button>
+                <button class="btn btn-toggle sidenav-toggler">
+                  <i class="gg-menu-left"></i>
+                </button>
+              </div>
+              <button class="topbar-toggler more">
+                <i class="gg-more-vertical-alt"></i>
+              </button>
+            </div>
+            <!-- End Logo Header -->
+          </div>
+          <!-- Navbar Type Response By AGZ -->
+          <div id="navbarArda"></div>
+        </div><!-- End main-header -->
+
+
+
+
+
+        <div class="container">
+          <div class="page-inner">
+          	
+          
+          <h3 class="fw-bold mb-1">File Manager</h3>
+            <div class="page-header">
+              <nav aria-label="breadcrumb">
+				  <ol class="breadcrumb">
+				    <li class="breadcrumb-item"><a class="text-info" href="index.html">Home</a></li>
+				    <li class="breadcrumb-item"><a class="text-info" href="javascript:void(0)">Apps</a></li>
+				    <li class="breadcrumb-item active" aria-current="page">File Manager</li>
+				  </ol>
+				</nav>
+            </div>
+            
+            
+            
+            <style>
+/* Mengatur teks agar sejajar dan tetap dalam satu baris */ .table th, .table td { white-space: nowrap; text-align: left; vertical-align: middle; }
+
+/* TABLE APDDING */
+.custom-accordion .accordion-list{display:-webkit-box;display:-ms-flexbox;display:flex;border-radius:7px;background-color:var(--bs-tertiary-bg);padding:12px 20px;color:var(--bs-body-color);font-weight:600;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
+.custom-accordion .accordion-list.collapsed i.accor-plus-icon:before{content:"\f0415"}
+.custom-accordion .accordion-list .accor-plus-icon{display:inline-block;font-size:16px;height:24px;width:24px;line-height:22px;background-color:var(--bs-secondary-bg);text-align:center;border-radius:50%}
+.custom-accordion a.collapsed i.accor-down-icon:before{content:"\f0140"}
+.custom-accordion .card-body{color:var(--prefixsecondary-color)}
+
+/* CATEGORY LIST */
+.categories-list{padding:4px 0}
+.categories-list li a{display:block;padding:8px 12px;color:var(--bs-body-color);font-weight:500}
+.categories-list li.active a{color:#556ee6}
+.categories-list li ul{padding-left:16px}
+.categories-list li ul li a{padding:4px 12px;color:var(--bs-secondary-color);font-size:13px;font-weight:400}
+
+            </style>
+            
+            <!-- ADD YOUR CODE -->
+            	        
+        <!-- App Css-->
+        
+            
+
+                        <div class="col-xl-3 col-lg-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    
+                                    
+                                            
+                                                    <div class="mb-3">
+                                                        <div class="dropdown">
+                                                            <button class="btn btn-light w-100" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <i class="mdi mdi-plus me-1"></i> Create New
+                                                            </button>
+                                                            <div class="dropdown-menu">
+                                                              <a class="dropdown-item" href="#"><i class="bx bx-folder me-1"></i> Folder</a>
+                                                              <a class="dropdown-item" href="#"><i class="bx bx-file me-1"></i> File</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                    
+                                    
+                                                    <ul class="list-unstyled categories-list">
+                                                        <li>
+                                                            <div class="custom-accordion">
+                                                                <a class="text-body fw-medium py-1 d-flex align-items-center" data-bs-toggle="collapse" href="#categories-collapse" role="button" aria-expanded="false" aria-controls="categories-collapse">
+                                                                    <i class="mdi mdi-folder font-size-16 text-warning me-2"></i> Files <i class="mdi mdi-chevron-up accor-down-icon ms-auto"></i>
+                                                                </a>
+                                                                <div class="collapse show" id="categories-collapse">
+                                                                    <div class="card border-0 shadow-none ps-2 mb-0">
+                                                                        <ul class="list-unstyled mb-0">
+                                                                            <li><a href="javascript: void(0);" class="d-flex align-items-center"><span class="me-auto">Design</span></a></li>
+                                                                            <li><a href="javascript: void(0);" class="d-flex align-items-center"><span class="me-auto">Development</span> <i class="mdi mdi-pin ms-auto"></i></a></li>
+                                                                            <li><a href="javascript: void(0);" class="d-flex align-items-center"><span class="me-auto">Project A</span></a></li>
+                                                                            <li><a href="javascript: void(0);" class="d-flex align-items-center"><span class="me-auto">Admin</span> <i class="mdi mdi-pin ms-auto"></i></a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);" class="text-body d-flex align-items-center">
+                                                                <iconify-icon icon="logos:google-drive"  class="font-size-14 text-muted me-1"></iconify-icon><span class="me-auto">Google Drive</span> 
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);" class="text-body d-flex align-items-center">
+                                                                <i class="mdi mdi-dropbox font-size-16 me-2 text-primary"></i> <span class="me-auto">Dropbox</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);" class="text-body d-flex align-items-center">
+                                                                <i class="mdi mdi-share-variant font-size-16 me-2"></i> <span class="me-auto">Shared</span> <i class="mdi mdi-circle-medium text-danger ms-2"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);" class="text-body d-flex align-items-center">
+                                                                <i class="mdi mdi-star-outline text-muted font-size-16 me-2"></i> <span class="me-auto">Starred</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);" class="text-body d-flex align-items-center">
+                                                                <i class="mdi mdi-trash-can text-danger font-size-16 me-2"></i> <span class="me-auto">Trash</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript: void(0);" class="text-body d-flex align-items-center">
+                                                                <i class="mdi mdi-cog text-muted font-size-16 me-2"></i> <span class="me-auto">Setting</span><span class="badge badge-soft-success rounded-pill ms-2">01</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                <div class="mt-auto">
+                                                    <div class="alert alert-success alert-dismissible fade show px-3 mb-0" role="alert">
+                                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                        <div class="mb-3">
+                                                            <i class="bx bxs-folder-open h1 text-success"></i>
+                                                        </div>
+                                                        <div>
+                                                            <h5 class="text-success">Upgrade Features</h5>
+                                                            <p>Cum sociis natoque penatibus et</p>
+                                                            <div class="text-center">
+                                                                <button type="button" class="btn btn-link text-decoration-none text-success">Upgrade <i class="mdi mdi-arrow-right"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- End MT AUTO -->
+                                                	
+                                                
+                                </div>
+                            </div>
+                        </div>
+
+                                    
+                        
+                        
+                        
+                        
+                        <div class="col-xl-3 col-lg-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="text-center">
+                                    	<h4 class="card-title">Storage</h4>
+                                        <div class="apex-charts" id="radial-chart" data-colors='["--bs-primary"]'></div>
+                                        <p class="text-muted mt-4">57 GB (55%) of 128 GB used</p>
+                                    </div>
+
+                                    <div class="mt-4">
+                                        <div class="card border shadow-none mb-2">
+                                            <a href="javascript: void(0);" class="text-body">
+                                                <div class="p-2">
+                                                    <div class="d-flex">
+                                                        <div class="avatar-xs align-self-center me-2">
+                                                            <div class="avatar-title rounded bg-transparent text-success font-size-20">
+                                                                <i class="bx bx-image"></i>
+                                                            </div>
+                                                        </div>
+    
+                                                        <div class="overflow-hidden me-auto">
+                                                            <h5 class="font-size-13 text-truncate mb-1">Images</h5>
+                                                            <p class="text-muted text-truncate mb-0">3300 Files</p>
+                                                        </div>
+    
+                                                        <div class="ms-2">
+                                                            <p class="text-muted">7,5 GB</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card border shadow-none mb-2">
+                                            <a href="javascript: void(0);" class="text-body">
+                                                <div class="p-2">
+                                                    <div class="d-flex">
+                                                        <div class="avatar-xs align-self-center me-2">
+                                                            <div class="avatar-title rounded bg-transparent text-danger font-size-20">
+                                                                <i class="mdi mdi-play-circle-outline"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="overflow-hidden me-auto">
+                                                            <h5 class="font-size-13 text-truncate mb-1">Video</h5>
+                                                            <p class="text-muted text-truncate mb-0">980 Files</p>
+                                                        </div>
+                                                        <div class="ms-2">
+                                                            <p class="text-muted">20,4 GB</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card border shadow-none mb-2">
+                                            <a href="javascript: void(0);" class="text-body">
+                                                <div class="p-2">
+                                                    <div class="d-flex">
+                                                        <div class="avatar-xs align-self-center me-2">
+                                                            <div class="avatar-title rounded bg-transparent text-info font-size-20">
+                                                                <i class="mdi mdi-music"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="overflow-hidden me-auto">
+                                                            <h5 class="font-size-13 text-truncate mb-1">Music</h5>
+                                                            <p class="text-muted text-truncate mb-0">1650 Files</p>
+                                                        </div>
+                                                        <div class="ms-2">
+                                                            <p class="text-muted">25,7 GB</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <div class="card border shadow-none mb-2">
+                                            <a href="javascript: void(0);" class="text-body">
+                                                <div class="p-2">
+                                                    <div class="d-flex">
+                                                        <div class="avatar-xs align-self-center me-2">
+                                                            <div class="avatar-title rounded bg-transparent text-primary font-size-20">
+                                                                <i class="mdi mdi-file-document"></i>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="overflow-hidden me-auto">
+                                                            <h5 class="font-size-13 text-truncate mb-1">Document</h5>
+                                                            <p class="text-muted text-truncate mb-0">21 Files</p>
+                                                        </div>
+
+                                                        <div class="ms-2">
+                                                            <p class="text-muted">2 GB</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <div class="card border shadow-none">
+                                            <a href="javascript: void(0);" class="text-body">
+                                                <div class="p-2">
+                                                    <div class="d-flex">
+                                                        <div class="avatar-xs align-self-center me-2">
+                                                            <div class="avatar-title rounded bg-transparent text-warning font-size-20">
+                                                                <i class="mdi mdi-folder"></i>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="overflow-hidden me-auto">
+                                                            <h5 class="font-size-13 text-truncate mb-1">Others</h5>
+                                                            <p class="text-muted text-truncate mb-0">20 Files</p>
+                                                        </div>
+
+                                                        <div class="ms-2">
+                                                            <p class="text-muted">1,4 GB</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+            
+            
+            
+            
+            
+                                        <div class="col-md-12">
+                                            <div class="card">
+							                        <div class="card-header text-center">
+							                            <h4 class="card-title">File Manager</h4>
+							                        </div>
+                                            	<div class="card-body">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-nowrap table-hover table-head-bg-info">
+                                                            <thead>
+                                                                <tr>
+                                                                  <th class="col-name">Name File</th>
+                                                                  <th class="col-date">Date modified</th>
+                                                                  <th class="col-note">Note</th>
+                                                                  <th class="col-size" colspan="2">Size</th>
+                                                                </tr>
+                                                              </thead>
+                                                            <tbody>
+                                                            	<tr>
+                                                                    <td><a href="assets/js/new-arrivals.js" class="text-dark fw-medium"><i class="bi bi-filetype-js font-size-16 text-js"></i> new-arrivals.js</a></td>
+                                                                    <td>07-04-2025, 16:35</td>
+                                                                    <td>Add Script New Arrivals</td>
+                                                                    <td>0,93 KB</td>
+                                                                    <td><i class="bi bi-three-dots"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><a href="javascript:void(0);" class="text-dark fw-medium"><i class="bi bi-folder-fill font-size-16 text-warning"></i> mdi-icon.min.css</a></td>
+                                                                    <td>19-03-2025, 12:00</td>
+                                                                    <td>Add Material Design Icons</td>
+                                                                    <td>1,96 KB</td>
+                                                                    <td><i class="bi bi-three-dots"></i></td>
+                                                                </tr>
+                                                            	<tr>
+                                                                    <td><a href="assets/js/plugin/file-manager/file-manager-2.init.js" class="text-dark fw-medium"><i class="bi bi-filetype-js font-size-16 text-js"></i> file-manager.init.js</a></td>
+                                                                    <td>19-03-2025, 04:55</td>
+                                                                    <td>Add Charts File Manager</td>
+                                                                    <td>1,96 KB</td>
+                                                                    <td><i class="bi bi-three-dots"></i></td>
+                                                                </tr>
+                                                            	<tr>
+                                                                    <td><a href="my-wallet.html" class="text-dark fw-medium"><i class="bi bi-filetype-html font-size-16 text-html"></i> my-wallet.html</a></td>
+                                                                    <td>18-03-2025, 17:30</td>
+                                                                    <td>Add My Wallet</td>
+                                                                    <td>71,45 KB</td>
+                                                                    <td><i class="bi bi-three-dots"></i></td>
+                                                                </tr>
+                                                            	<tr>
+                                                                    <td><a href="#!" class="text-dark fw-medium"><i class="bi bi-folder-fill font-size-16 text-warning"></i> candlestick js</a></td>
+                                                                    <td>18-03-2025, 16:50</td>
+                                                                    <td>Add Candlestick JS</td>
+                                                                    <td>+2 MB</td>
+                                                                    <td><i class="bi bi-three-dots"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><a href="assets/js/plugin/apexcharts/apexcharts.min.js" class="text-dark fw-medium"><i class="bi bi-filetype-js font-size-16 text-js"></i> apexcharts.min.js</a></td>
+                                                                    <td>18-03-2025, 13:59</td>
+                                                                    <td>Add Apex Charts JS</td>
+                                                                    <td>524,41 KB</td>
+                                                                    <td><i class="bi bi-three-dots"></i></td>
+                                                                </tr>
+                                                            	<tr>
+                                                                    <td><a href="tools/art.html" class="text-dark fw-medium"><i class="bi bi-filetype-html font-size-16 text-html"></i> art.html</a></td>
+                                                                    <td>17-03-2025, 01:50</td>
+                                                                    <td>Add Tools Ai Art</td>
+                                                                    <td>11,15 KB</td>
+                                                                    <td><i class="bi bi-three-dots"></i></td>
+                                                                </tr>
+                                                            	<tr>
+                                                                    <td><a href="tools/pornhub.html" class="text-dark fw-medium"><i class="bi bi-filetype-html font-size-16 text-html"></i> pornhub.html</a></td>
+                                                                    <td>16-03-2025, 21:30</td>
+                                                                    <td>Add Tools Pornhub</td>
+                                                                    <td>12,85 KB</td>
+                                                                    <td><i class="bi bi-three-dots"></i></td>
+                                                                </tr>
+                                                            	<tr>
+                                                                    <td><a href="tools/brat.html" class="text-dark fw-medium"><i class="bi bi-filetype-html font-size-16 text-html"></i> brat.html</a></td>
+                                                                    <td>14-03-2025, 23:00 - 06:05</td>
+                                                                    <td>Add Tools Tiktok</td>
+                                                                    <td>11,53 KB</td>
+                                                                    <td><i class="bi bi-three-dots"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><a href="tools/tiktok.html" class="text-dark fw-medium"><i class="bi bi-filetype-html font-size-16 text-html"></i> tiktok.html</a></td>
+                                                                    <td>13-03-2025, 23:49</td>
+                                                                    <td>Add Tools Tiktok</td>
+                                                                    <td>12,05 KB</td>
+                                                                    <td><i class="bi bi-three-dots"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><a href="#" class="text-dark fw-medium"><i class="bi bi-filetype-js font-size-16 text-js"></i> response.js</a></td>
+                                                                    <td>03-03-2025, 18:30</td>
+                                                                    <td>Perbaikan Script Response</td>
+                                                                    <td>895 B</td>
+                                                                    <td><i class="bi bi-three-dots"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><a href="collaborator.html" class="text-dark fw-medium"><i class="bi bi-filetype-html font-size-16 text-html"></i> collaborator.html</a></td>
+                                                                    <td>03-03-2025, 16:15</td>
+                                                                    <td>Add File Collaborator</td>
+                                                                    <td>32,85 KB</td>
+                                                                    <td><i class="bi bi-three-dots"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><a href="#" class="text-dark fw-medium"><i class="bi bi-filetype-css font-size-16 text-css"></i> bootstrap-icons.css</a></td>
+                                                                    <td>01-03-2025, 10:20</td>
+                                                                    <td>Add bootstrap-icons.css</td>
+                                                                    <td>±5 MB</td>
+                                                                    <td><i class="bi bi-three-dots"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><a href="help-center.html" class="text-dark fw-medium"><i class="bi bi-filetype-html font-size-16 text-html"></i> help-center.html</a></td>
+                                                                    <td>28-02-2025, 14:00</td>
+                                                                    <td>Add File Help Center</td>
+                                                                    <td>28,58 KB</td>
+                                                                    <td><i class="bi bi-three-dots"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><a href="privacy-policy.html" class="text-dark fw-medium"><i class="bi bi-filetype-html font-size-16 text-html"></i> privacy-policy.html</a></td>
+                                                                    <td>21-02-2025, 15:00</td>
+                                                                    <td>Add File Privacy Policy</td>
+                                                                    <td>15,37 KB</td>
+                                                                    <td><i class="bi bi-three-dots"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><a href="library/blogger.html" class="text-dark fw-medium"><i class="bi bi-filetype-html font-size-16 text-html"></i> blogger.html</a></td>
+                                                                    <td>18-02-2025, 14:00</td>
+                                                                    <td>Add File Blogger</td>
+                                                                    <td>12,10 KB</td>
+                                                                    <td><i class="bi bi-three-dots"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                <tr>
+                                                                    <td><a href="library/transaksi.html" class="text-dark fw-medium"><i class="bi bi-filetype-html font-size-16 text-html"></i> transaksi.html</a></td>
+                                                                    <td>17-02-2025, 14:55</td>
+                                                                    <td>Add File Transaksi</td>
+                                                                    <td>80,55 KB</td>
+                                                                    <td><i class="bi bi-three-dots"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><a href="ecommerce/product.html" class="text-dark fw-medium"><i class="bi bi-filetype-html font-size-16 text-html"></i> product.html</a></td>
+                                                                    <td>15-02-2025, 17:15</td>
+                                                                    <td>Add File Produk</td>
+                                                                    <td>35,50 KB</td>
+                                                                    <td><i class="bi bi-three-dots"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><a href="invoice.html" class="text-dark fw-medium"><i class="bi bi-filetype-html font-size-16 text-html"></i> invoice.html</a></td>
+                                                                    <td>27-01-2025, 18:00</td>
+                                                                    <td>Add File Invoice</td>
+                                                                    <td>15,90 KB</td>
+                                                                    <td><i class="bi bi-three-dots"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><a href="faqs.html" class="text-dark fw-medium"><i class="bi bi-filetype-html font-size-16 text-html"></i> faqs.html</a></td>
+                                                                    <td>26-01-2025, 15:20</td>
+                                                                    <td>Add File Faqs</td>
+                                                                    <td>28,30 KB</td>
+                                                                    <td><i class="bi bi-three-dots"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><a href="library/projects.html" class="text-dark fw-medium"><i class="bi bi-filetype-html font-size-16 text-html"></i> project.html</a></td>
+                                                                    <td>24-01-2025, 08:30 - 15:00</td>
+                                                                    <td>Add File Projects</td>
+                                                                    <td>21,63 KB</td>
+                                                                    <td><i class="bi bi-three-dots"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><a href="email.html" class="text-dark fw-medium"><i class="bi bi-filetype-html font-size-16 text-html"></i> email.html</a></td>
+                                                                    <td>09-01-2025, 08:30 - 09:40</td>
+                                                                    <td>Add Validate Email</td>
+                                                                    <td>13,45 KB</td>
+                                                                    <td><i class="bi bi-three-dots"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><a href="chat-team.html" class="text-dark fw-medium"><i class="bi bi-filetype-html font-size-16 text-html"></i> chat.html</a></td>
+                                                                    <td>31-12-2024, 18:00</td>
+                                                                    <td>Add Chat Time</td>
+                                                                    <td>16,15 KB</td>
+                                                                    <td><i class="bi bi-three-dots"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><a href="index.html" class="text-dark fw-medium"><i class="bi bi-file-earmark-code font-size-16 text-html"></i> index.html</a></td>
+                                                                    <td>30-12-2024, 08:30</td>
+                                                                    <td>Perubahan > Response</td>
+                                                                    <td>0 KB</td>
+                                                                    <td><i class="bi bi-three-dots"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><a href="index.html" class="text-dark fw-medium"><i class="bi bi-file-earmark-code font-size-16 text-html"></i> index.html</a></td>
+                                                                    <td>26-12-2024, 13:00</td>
+                                                                    <td>Add Script Expand</td>
+                                                                    <td>0 KB</td>
+                                                                    <td><i class="bi bi-three-dots"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><a href="#" class="text-dark fw-medium"><i class="bi bi-file-earmark-code font-size-16 text-js"></i> index.html</a></td>
+                                                                    <td>24/12/2024, 18.00</td>
+                                                                    <td>Perbaikan Script</td>
+                                                                    <td>0 KB</td>
+                                                                    <td><i class="bi bi-three-dots"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><a href="index.html" class="text-dark fw-medium"><i class="bi bi-file-earmark-code font-size-16 text-html"></i> index.html</a></td>
+                                                                    <td>20-12-2024, 10:30</td>
+                                                                    <td>Project Dimulai</td>
+                                                                    <td>0 KB</td>
+                                                                    <td><i class="bi bi-three-dots"></i></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><a href="javascript: void(0);" class="text-dark fw-medium"><i class="bi bi-folder-fill font-size-16 text-warning"></i> Project-KAi Admin.zip</a></td>
+                                                                    <td>15-12-2024, 14:00</td>
+                                                                    <td>START TEMPLATE</td>
+                                                                    <td>50 MB</td>
+                                                                    <td>
+                                                                        <div class="dropdown">
+                                                                            <a class="font-size-16 text-muted" role="button" data-bs-toggle="dropdown" aria-haspopup="true">
+                                                                                <i class="bi bi-three-dots"></i>
+                                                                            </a>
+                                                                            <div class="dropdown-menu dropdown-menu-end">
+                                                                                <a class="dropdown-item" href="#"><i class="bi bi-box-arrow-up-right text-info"></i> Open</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
+                                            	</div>
+                                            </div>
+                                        </div>
+	
+
+          </div><!-- END page-inner -->
+        </div><!-- END container -->
+
+
+
+
+        <footer class="footer">
+          <div class="container-fluid d-flex justify-content-between">
+            <div class="copyright"> &copy; <script>document.write(new Date().getFullYear())</script> <b><a href="contact.html" class="fw-bold footer-text-running" target="_blank" id="copyright">Arda Ganz</a></b> All rights reserved </div>
+          </div>
+        </footer> 
+      </div> <!-- END main-panel -->
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	<!-- Custom template | don't include it in your project! -->
+	<div class="custom-template">
+	  <div class="title">Settings</div>
+	  <div class="custom-content">
+	    <div class="switcher">
+	
+	      <!-- Logo Header -->
+	      <div class="switch-block">
+	        <h4>Logo Header</h4>
+	        <div class="btnSwitch">
+	          <button type="button" class="selected changeLogoHeaderColor" data-color="dark"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="blue"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="purple"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="light-blue"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="green"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="orange"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="red"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="white"></button>
+	          <br />
+	          <button type="button" class="changeLogoHeaderColor" data-color="dark2"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="blue2"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="purple2"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="light-blue2"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="green2"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="orange2"></button>
+	          <button type="button" class="changeLogoHeaderColor" data-color="red2"></button>
+	        </div>
+	      </div>
+	
+	      <!-- Navbar Header -->
+	      <div class="switch-block">
+	        <h4>Navbar Header</h4>
+	        <div class="btnSwitch">
+	          <button type="button" class="changeTopBarColor" data-color="dark"></button>
+	          <button type="button" class="changeTopBarColor" data-color="blue"></button>
+	          <button type="button" class="changeTopBarColor" data-color="purple"></button>
+	          <button type="button" class="changeTopBarColor" data-color="light-blue"></button>
+	          <button type="button" class="changeTopBarColor" data-color="green"></button>
+	          <button type="button" class="changeTopBarColor" data-color="orange"></button>
+	          <button type="button" class="changeTopBarColor" data-color="red"></button>
+	          <button type="button" class="selected changeTopBarColor" data-color="white"></button>
+	          <br />
+	          <button type="button" class="changeTopBarColor" data-color="dark2"></button>
+	          <button type="button" class="changeTopBarColor" data-color="blue2"></button>
+	          <button type="button" class="changeTopBarColor" data-color="purple2"></button>
+	          <button type="button" class="changeTopBarColor" data-color="light-blue2"></button>
+	          <button type="button" class="changeTopBarColor" data-color="green2"></button>
+	          <button type="button" class="changeTopBarColor" data-color="orange2"></button>
+	          <button type="button" class="changeTopBarColor" data-color="red2"></button>
+	        </div>
+	      </div>
+	
+	      <!-- Sidebar -->
+	      <div class="switch-block">
+	        <h4>Sidebar</h4>
+	        <div class="btnSwitch">
+	          <button type="button" class="changeSideBarColor" data-color="white"></button>
+	          <button type="button" class="selected changeSideBarColor" data-color="dark"></button>
+	          <button type="button" class="changeSideBarColor" data-color="dark2"></button>
+	        </div>
+	      </div>
+	
+	    </div>
+	  </div>
+	  <div class="custom-toggle">
+	    <i class="icon-settings"></i>
+	  </div>
+	</div><!-- End Custom template -->
+    </div><!-- END wraper -->
+      
+    
+
+
+
+
+
+
+    
+    
+    
+    <!--   Core JS Files   -->
+    <script src="assets/js/core/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/core/popper.min.js"></script>
+    <script src="assets/js/core/bootstrap.min.js"></script>
+
+    <!-- jQuery Scrollbar -->
+    <script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <!-- Chart JS -->
+    <script src="assets/js/plugin/chart.js/chart.min.js"></script>
+    <!-- jQuery Sparkline -->
+    <script src="assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+    <!-- Chart Circle -->
+    <script src="assets/js/plugin/chart-circle/circles.min.js"></script>
+    <!-- Datatables -->
+    <script src="assets/js/plugin/datatables/datatables.min.js"></script>
+    <!-- Bootstrap Notify -->
+    <script src="assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+    <!-- jQuery Vector Maps -->
+    <script src="assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
+    <script src="assets/js/plugin/jsvectormap/world.js"></script>
+    <!-- Sweet Alert -->
+    <script src="assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+    <!-- Kaiadmin JS -->
+    <script src="assets/js/kaiadmin.min.js"></script>
+    <!-- Kaiadmin DEMO methods, don't include it in your project! -->
+    <script src="assets/js/setting-demo.js"></script>
+    
+    <!-- apexcharts -->
+    <script src="assets/js/plugin/apexcharts/apexcharts.min.js"></script>
+    <!-- file-manager js -->
+    <script src="assets/js/plugin/file-manager/file-manager-2.init.js"></script>
+
+        
+    <script>
+setTimeout(() => {
+    let sidebarItem = document.querySelector('[data-filter-sidebar="ecommerce"]');
+    let collapseElement = document.getElementById("ecommerce");
+    let subMenuItem = document.querySelector('[data-filter-sidebar="product"]');
+
+    if (collapseElement) {
+        collapseElement.classList.add("show"); // Menampilkan sidebar
+        console.log("Sidebar Ecommerce ditampilkan!");
+    }
+
+    if (sidebarItem) {
+        sidebarItem.classList.add("active"); // Menandai menu Ecommerce sebagai aktif
+        console.log("Menu Ecommerce diaktifkan!");
+    }
+
+    if (subMenuItem) {
+        subMenuItem.classList.add("active"); // Menandai submenu Product sebagai aktif
+        console.log("Submenu Product diaktifkan!");
+    }
+    }, 500);
+    </script>
+    
+    <!--
+    <script>
+    	setTimeout(() => {
+    let activeItem = document.querySelector('li[data-filter-sidebar="replit"]');
+    if (activeItem) {
+        activeItem.classList.add("active");
+        console.log("Class 'active' ditambahkan!");
+    } else {
+        console.log("Elemen tidak ditemukan, coba cek ID sidebar.");
+    }
+}, 500); // Tunggu 500ms sebelum mencari elemen
+    </script>
+    -->
+    
+    
+    
+    
+	
+
+
+  
+  <!-- Script Copyright By Arda Ganz -->
+  <script src="settings/js/copyright.js"></script>
+  <!-- Script Type Response By Arda Ganz -->
+  <script src="settings/js/response.js"></script>
+  <!-- Script Full Screen By Arda Ganz -->
+  <script src="assets/js/fullscreen.js"></script>
+
+        
+    
+  </body>
+</html>

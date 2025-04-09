@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Struktur Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 250px; /* Sesuaikan dengan kebutuhan */
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .label {
+            font-weight: bold;
+            width: 120px; /* Lebar tetap untuk label agar titik dua sejajar */
+        }
+
+        .value {
+            flex: 1; /* Agar tetap sejajar di kiri setelah titik dua */
+            text-align: left;
+        }
+
+        .separator {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #ccc;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <span class="label">Nama Barang</span><span class="separator">:</span>
+            <span class="value">49.000</span>
+        </div>
+        <hr>
+        <div class="row">
+            <span class="label">Harga Jual</span><span class="separator">:</span>
+            <span class="value">55.000</span>
+        </div>
+        <hr>
+    </div>
+</body>
+</html>

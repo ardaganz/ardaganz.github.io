@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pesanan Produk</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container py-5">
+
+  <h3 id="produk">Followers IG</h3>
+  <p id="type">Permanen</p>
+
+  <h5>Pilih Varian:</h5>
+  <div>
+    <input type="radio" name="varian" value="500" data-harga="10000" id="varian1">
+    <label for="varian1">500 Followers</label><br>
+
+    <input type="radio" name="varian" value="1000" data-harga="20000" id="varian2">
+    <label for="varian2">1000 Followers</label><br>
+
+    <input type="radio" name="varian" value="2000" data-harga="40000" id="varian3">
+    <label for="varian3">2000 Followers</label>
+  </div>
+
+  <p class="mt-3">Harga: <span id="outputHarga">-</span></p>
+
+  <input type="hidden" id="totalsemua">
+  <input type="hidden" id="hargaVarian">
+
+  <button id="btnModalPemesanan" class="btn btn-primary mt-3">Pesan Sekarang</button>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalPemesanan" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel">Detail Pesanan</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <form id="formPesanan">
+          <div class="mb-2">
+            <label>Produk:</label>
+            <input type="text" id="produkModal" class="form-control" readonly>
+          </div>
+          <div class="mb-2">
+            <label>Type:</label>
+            <input type="text" id="typeModal" class="form-control" readonly>
+          </div>
+          <div class="mb-2">
+            <label>Varian:</label>
+            <input type="text" id="varianModal" class="form-control" readonly>
+          </div>
+          <div class="mb-2">
+            <label>Total Harga:</label>
+            <input type="text" id="totalHargaModal" class="form-control" readonly>
+          </div>
+          <div class="mb-2">
+            <label>Ketik Pesan <span class="text-danger">*</span></label>
+            <textarea class="form-control" id="pesan" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-success mt-2 w-100">Kirim ke WhatsApp</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const radios = document.querySelectorAll('input[name="varian"]');
+const outputHarga = document.getElementById('outputHarga');
+
+radios.forEach(radio => {
+  radio.addEventListener('change', function() {
+    let harga = parseInt(this.getAttribute('data-harga'));
+    let formatHarga = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(harga);
+    outputHarga.textContent = formatHarga;
+
+    document.getElementById('totalsemua').value = this.value;
+    document.getElementById('hargaVarian').value = harga;
+  });
+});
+
+const modalPemesanan = new bootstrap.Modal(document.getElementById('modalPemesanan'));
+
+document.getElementById('btnModalPemesanan').addEventListener('click', function () {
+  let varianTerpilih = document.querySelector('input[name="varian"]:checked');
+
+  if (!varianTerpilih) {
+    alert('Silakan pilih varian terlebih dahulu.');
+    return;
+  }
+
+  document.getElementById('produkModal').value = document.getElementById('produk').textContent;
+  document.getElementById('typeModal').value = document.getElementById('type').textContent;
+  document.getElementById('varianModal').value = document.getElementById('totalsemua').value;
+
+  let harga = parseInt(document.getElementById('hargaVarian').value);
+  let formatHarga = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(harga);
+  document.getElementById('totalHargaModal').value = formatHarga;
+
+  modalPemesanan.show();
+});
+
+document.getElementById('formPesanan').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  let pesan = document.getElementById('pesan').value.trim();
+
+  if (pesan === '') {
+    alert('Silakan isi pesan terlebih dahulu.');
+    return;
+  }
+
+  // Nomor WhatsApp tujuan (Fix)
+  let nomorWA = '6283143831566';
+
+  let produk = document.getElementById('produkModal').value;
+  let type = document.getElementById('typeModal').value;
+  let varian = document.getElementById('varianModal').value;
+  let harga = document.getElementById('totalHargaModal').value;
+
+  let finalPesan = '%0A%0A' +
+                    '==============' + '%0A' +
+                    'Detail Pemesanan' + '%0A' +
+                    '==============' + '%0A' +
+                    '|| *Nama Produk* : ' + produk + '%0A' +
+                    '|| *Type* : ' + type + '%0A' +
+                    '|| *Varian* : ' + varian + '%0A' +
+                    '|| *Harga* : ' + harga + '%0A' +
+                    '===============' + '%0A' +
+                    'Detail Customer' + '%0A' +
+                    '===============' + '%0A' +
+                    '|| *Nama* : ' + pesan + '%0A';
+
+  let walink = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) 
+    ? 'https://api.whatsapp.com/send' 
+    : 'https://web.whatsapp.com/send';
+
+  // let urlWA = `${walink}?phone=${nomorWA}&text=${encodeURIComponent(finalPesan)}`;
+  let urlWA = `${walink}?phone=${nomorWA}&text=${finalPesan}`;
+
+  window.open(urlWA, '_blank');
+
+  modalPemesanan.hide();
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Mundur Ganda</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .countdown {
+            font-size: 2rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center mt-5">
+        <h2>Hitung Mundur Ganda</h2>
+
+        <div>
+            <button class="btn btn-primary" id="hitungMundur1">Mulai Hitung Mundur 1</button>
+            <div class="countdown" id="countdownDisplay1">10</div>
+        </div>
+
+        <div>
+            <button class="btn btn-secondary" id="hitungMundur2">Mulai Hitung Mundur 2</button>
+            <div class="countdown" id="countdownDisplay2">10</div>
+        </div>
+    </div>
+
+    <script>
+        let countdown1, countdown2;
+        let currentTime1 = 10;
+        let currentTime2 = 10;
+
+        document.getElementById('hitungMundur1').addEventListener('click', function() {
+            // Reset waktu
+            currentTime1 = 10;
+            document.getElementById('countdownDisplay1').textContent = currentTime1;
+
+            // Hentikan countdown sebelumnya jika ada
+            clearInterval(countdown1);
+
+            // Hitung mundur 10 detik untuk timer 1
+            countdown1 = setInterval(function() {
+                currentTime1--;
+                document.getElementById('countdownDisplay1').textContent = currentTime1;
+
+                // Jika waktu habis, hentikan countdown dan ganti teks
+                if (currentTime1 <= 0) {
+                    clearInterval(countdown1);
+                    document.getElementById('countdownDisplay1').textContent = "Waktu Selesai!";
+                }
+            }, 1000);
+        });
+
+        document.getElementById('hitungMundur2').addEventListener('click', function() {
+            // Reset waktu
+            currentTime2 = 10;
+            document.getElementById('countdownDisplay2').textContent = currentTime2;
+
+            // Hentikan countdown sebelumnya jika ada
+            clearInterval(countdown2);
+
+            // Hitung mundur 10 detik untuk timer 2
+            countdown2 = setInterval(function() {
+                currentTime2--;
+                document.getElementById('countdownDisplay2').textContent = currentTime2;
+
+                // Jika waktu habis, hentikan countdown dan ganti teks
+                if (currentTime2 <= 0) {
+                    clearInterval(countdown2);
+                    document.getElementById('countdownDisplay2').textContent = "Waktu Selesai!";
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

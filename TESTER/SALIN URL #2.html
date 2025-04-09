@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salin URL dari Script</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+    <h1>Salin URL dari Script</h1>
+    <button id="salinBtn"><i class="bi bi-copy"></i> Salin</button>
+
+    <script>
+        // Simpan URL di dalam variabel (tidak terlihat di halaman)
+        let linknya = "https://jembut.com";
+
+        document.getElementById("salinBtn").addEventListener("click", function(event) {
+            event.preventDefault();
+            
+            // Salin hanya isi variabel linknya
+            navigator.clipboard.writeText(linknya).then(function() {
+                var icon = document.querySelector("#salinBtn i");
+                icon.classList.remove("bi-copy");
+                icon.classList.add("bi-check2");
+                
+                setTimeout(function() {
+                    icon.classList.remove("bi-check2");
+                    icon.classList.add("bi-copy");
+                }, 700);
+            }).catch(function(err) {
+                console.error("Gagal menyalin teks: ", err);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rating Star 5</title>
+
+    <!-- Link Bootstrap (Opsional, jika belum ada) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
+    <!-- Link Boxicons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+
+    <style>
+        .fs-24 { font-size: 24px; } 
+        .fs-16 { font-size: 16px; }
+        .starsRatingArda li { cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <div class="p-2 d-flex gap-3 bg-light align-items-center justify-content-center mt-3 rounded">
+        <ul id="rating-container" class="d-flex text-warning m-0 fs-24 list-unstyled starsRatingArda">
+            <li data-value="1"><i class="bx bx-star"></i></li>
+            <li data-value="2"><i class="bx bx-star"></i></li>
+            <li data-value="3"><i class="bx bx-star"></i></li>
+            <li data-value="4"><i class="bx bx-star"></i></li>
+            <li data-value="5"><i class="bx bx-star"></i></li>
+        </ul>
+        <p id="rating-text" class="mb-0 text-dark fw-medium fs-16">0 Out of 5</p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const starsRatingArda = document.querySelectorAll("#rating-container li");
+            const ratingText = document.getElementById("rating-text");
+            let currentRating = localStorage.getItem("rating") || 0;
+
+            highlightstarsRatingArda(currentRating);
+            ratingText.textContent = `${currentRating} Out of 5`;
+
+            starsRatingArda.forEach(star => {
+                star.addEventListener("mousemove", function (e) {
+                    let rating = parseInt(this.getAttribute("data-value"));
+                    if (e.offsetX < this.clientWidth / 2) {
+                        rating -= 0.5; // Jika mouse di sebelah kiri, jadikan setengah
+                    }
+                    highlightstarsRatingArda(rating, true);
+                });
+
+                star.addEventListener("click", function (e) {
+                    let rating = parseInt(this.getAttribute("data-value"));
+                    if (e.offsetX < this.clientWidth / 2) {
+                        rating -= 0.5;
+                    }
+                    currentRating = rating;
+                    localStorage.setItem("rating", currentRating);
+                    highlightstarsRatingArda(currentRating);
+                    ratingText.textContent = `${currentRating} Out of 5`;
+                });
+
+                star.addEventListener("mouseleave", function () {
+                    highlightstarsRatingArda(currentRating);
+                });
+            });
+
+            function highlightstarsRatingArda(rating, preview = false) {
+                starsRatingArda.forEach((star, i) => {
+                    let value = i + 1;
+                    let icon = star.querySelector("i");
+
+                    if (value <= rating) {
+                        icon.className = "bx bxs-star"; // Bintang penuh
+                    } else if (value - 0.5 === rating) {
+                        icon.className = "bx bxs-star-half"; // Setengah bintang
+                    } else {
+                        icon.className = "bx bx-star"; // Bintang kosong
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

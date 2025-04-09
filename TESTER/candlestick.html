@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candlestick Chart dengan Wick Berwarna</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <canvas id="candlestickChart"></canvas>
+
+    <script>
+        var ctx = document.getElementById('candlestickChart').getContext('2d');
+
+        // Data Candlestick
+        var candlestickData = [
+            { label: "Oct 06 05:30", o: 6640, h: 6660, l: 6620, c: 6630 },
+            { label: "Oct 06 12:30", o: 6630, h: 6650, l: 6600, c: 6610 },
+            { label: "Oct 06 16:00", o: 6610, h: 6645, l: 6590, c: 6625 },
+            { label: "Oct 06 23:00", o: 6625, h: 6635, l: 6585, c: 6595 },
+            { label: "Oct 07 02:30", o: 6595, h: 6620, l: 6570, c: 6605 },
+            { label: "Oct 07 06:00", o: 6605, h: 6615, l: 6580, c: 6590 },
+            { label: "Oct 07 09:30", o: 6590, h: 6605, l: 6575, c: 6600 }
+        ];
+
+        // Pisahkan data untuk chart
+        var labels = candlestickData.map(item => item.label);
+        var openPrices = candlestickData.map(item => item.o);
+        var highPrices = candlestickData.map(item => item.h);
+        var lowPrices = candlestickData.map(item => item.l);
+        var closePrices = candlestickData.map(item => item.c);
+
+        // Tentukan warna tubuh candlestick dan wick bawah
+        var colors = candlestickData.map(item => item.c >= item.o ? "#32CD32" : "#FF4500"); // Hijau naik, merah turun
+        var wickColors = candlestickData.map(item => item.c >= item.o ? "#32CD32" : "#FF4500"); // Wick bawah sama dengan warna body
+
+        var myCandlestickChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [
+                    {  // Body Candlestick
+                        label: "Candlestick",
+                        data: openPrices.map((o, i) => ({
+                            x: labels[i],
+                            y: [openPrices[i], closePrices[i]]
+                        })),
+                        backgroundColor: colors,
+                        borderColor: colors,
+                        borderWidth: 1
+                    },
+                    {  // Wick (Shadow Atas-Bawah)
+                        label: "Wick",
+                        data: highPrices.map((h, i) => ({
+                            x: labels[i],
+                            y: [lowPrices[i], highPrices[i]]
+                        })),
+                        type: "line",
+                        borderColor: wickColors,
+                        borderWidth: 1,
+                        pointRadius: 0
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        grid: { display: false },
+                        ticks: { maxRotation: 45, minRotation: 45 } // Rotasi label sumbu X
+                    },
+                    y: {
+                        beginAtZero: false
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

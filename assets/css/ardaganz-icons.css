@@ -1,0 +1,60 @@
+@font-face
+{
+    font-family: 'agzicons';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('../fonts/ardaganzicons/agzicons.eot');
+    src: url('../fonts/ardaganzicons/agzicons.eot') format('embedded-opentype'),
+    url('../fonts/ardaganzicons/agzicons.woff2') format('woff2'),
+    url('../fonts/ardaganzicons/agzicons.woff') format('woff'),
+    url('../fonts/ardaganzicons/agzicons.ttf') format('truetype'),
+    url('../fonts/ardaganzicons/agzicons.svg?#agzicons') format('svg');
+}
+.ag
+{
+    font-family: 'agzicons' !important;
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+    display: inline-block;
+
+    text-transform: none;
+
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.ag-ul
+{
+    margin-left: 2em;
+    padding-left: 0;
+
+    list-style: none;
+}
+.ag-ul > li
+{
+    position: relative;
+}
+.ag-ul .ag
+{
+    font-size: inherit;
+    line-height: inherit;
+    position: absolute;
+    left: -2em;
+    width: 2em;
+    text-align: center;
+}
+
+
+  .ags-color:before {
+    content: "\ef39";
+  }
+  .ag-reflect-horizontal:before {
+    content: "\ef3a";
+  }
+  .ag-reflect-vertical:before {
+    content: "\ef3b";
+  }

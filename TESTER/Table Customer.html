@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON ke HTML</title>
+</head>
+<body>
+
+    <h2>Daftar Data (UL - LI)</h2>
+    <ul id="list"></ul>
+
+    <h2>Data dalam Tabel</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Botol</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+    </table>
+
+    <script>
+        // Data JSON
+        const data = [
+            { "name": "ARDA", "BOTOL": "3", "TOTAL": "3" },
+            { "name": "ARDA", "BOTOL": "3", "TOTAL": "3" },
+            { "name": "ARDA", "BOTOL": "3", "TOTAL": "3" }
+        ];
+
+        // Tampilkan dalam bentuk daftar UL
+        const list = document.getElementById("list");
+        data.forEach(item => {
+            const li = document.createElement("li");
+            li.textContent = `Nama: ${item.name}, Botol: ${item.BOTOL}, Total: ${item.TOTAL}`;
+            list.appendChild(li);
+        });
+
+        // Tampilkan dalam bentuk tabel
+        const tableBody = document.getElementById("table-body");
+        data.forEach(item => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${item.name}</td>
+                <td>${item.BOTOL}</td>
+                <td>${item.TOTAL}</td>
+                <td><i class="bi bi-three-dots"></i></td>
+            `;
+            tableBody.appendChild(row);
+        });
+    </script>
+
+</body>
+</html>

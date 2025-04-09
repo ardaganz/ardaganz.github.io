@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en" class="light-style">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>Features | AgungApi</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon/favicon.ico" />
+    
+    <!-- External CSS -->
+        <link href="assets/css/style2.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="layout-wrapper">
+        <!-- Navigation -->
+        <nav class="nav-wrapper">
+            <div class="nav-logo">
+                <i class='bx bx-server logo'></i>
+                <span class="fw-bold">AgungApi</span>
+            </div>
+        </nav>
+        
+        <main class="main-content">
+            <!-- Welcome Card -->
+            <div class="card animate-pulse" data-aos="fade-up">
+                <h5 class="card-title"><i class='bx bx-chip'></i> API Dashboard</h5>
+                <p>
+                    <span class="fw-bold text-primary"><i class='bx bx-server'></i> Server Status</span><br>
+                    <i class='bx bx-time'></i> Runtime: <span id="runtime" class="fw-medium">00:00:00</span><br>
+                    <i class='bx bx-memory-card'></i> Memory: <span id="RamUsage" class="fw-medium">0</span> / <span id="RamTotal" class="fw-medium">0</span>
+                </p>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-lg-3 col-md-6 mb-4">
+                    <div class="card stats-card">
+                        <i class='bx bx-user-check'></i>
+                        <span class="stats-label">Visitors</span>
+                        <h3 class="stats-value" id="visitor-count">0</h3>
+                        <small class="text-primary">Total Visitors</small>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3 col-md-6 mb-4">
+                    <div class="card stats-card">
+                        <i class='bx bx-pulse'></i>
+                        <span class="stats-label">Requests</span>
+                        <h3 class="stats-value" id="totalreq">0</h3>
+                        <small class="text-primary">Today: <span id="todayreq">0</span></small>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3 col-md-6 mb-4">
+                    <div class="card stats-card">
+                        <i class='bx bx-time-five'></i>
+                        <span class="stats-label">Current Time</span>
+                        <h3 class="stats-value" id="clock">00:00:00</h3>
+                        <small class="text-primary" id="sayying">Jakarta Time</small>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3 col-md-6 mb-4">
+                    <div class="card stats-card">
+                        <i class='bx bx-network-chart'></i>
+                        <span class="stats-label">Your IP</span>
+                        <h3 class="stats-value" id="ip">0.0.0.0</h3>
+                        <small class="text-primary">IP Address</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terms and Conditions -->
+            <div class="card" data-aos="fade-up">
+                <h5 class="card-title"><i class='bx bx-shield-quarter'></i> Terms & Conditions</h5>
+                <div class="terms-content">
+                    <ul class="ps-3 mb-0">
+                        <li>Don't flood the API with excessive requests in a short time period.</li>
+                        <li>This API is 100% free to use without requiring any API key.</li>
+                        <li>Users take full responsibility for all actions performed on this site.</li>
+                        <li>We are not responsible for any damages or issues arising from the use of this site.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="search-container" data-aos="fade-up">
+                <i class='bx bx-search search-icon'></i>
+                <input 
+                    type="text" 
+                    class="search-input" 
+                    placeholder="Search for features..."
+                    aria-label="Search features"
+                />
+            </div>
+            
+            <!-- No Results Message -->
+            <div class="no-results card text-center p-4">
+                <i class='bx bx-search-alt text-primary mb-3' style="font-size: 3rem;"></i>
+                <p class="mb-0">Sorry, no features match your search criteria.</p>
+            </div>
+
+            <!-- AI Menu -->
+            <div class="table-card" data-aos="fade-up" data-aos-delay="100">
+               <div class="table-header">
+                 <i class='bx bx-brain'></i> AI Features
+                 <span class="header-badge">1</span>
+               </div>
+                 <div class="table-container" style="overflow-x: auto;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Features</th>
+                                <th>Parameter</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="feature-row">
+                                <td><strong>Chat Gpt</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/chatgpt?q=hai" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Seaart</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/seaart?prompt=anime mata biru" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Text2img</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/text2img?prompt=kucing" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>voicevox</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/voicevox?q=hai" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Simi</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/simi?q=hai" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Gemini</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/gemini?q=hai" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Mistralnemo</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/mistralnemo?q=hai" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Hoshino</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/hoshino?q=hai" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Muslimai</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/muslimai?q=surah al kahf" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>NSFW Generator</strong></td>
+                                <td>Prompt</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/nsfwgenerator?prompt=beautiful girl bra" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Blackbox</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/blackbox?q=hai" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>3D generator</strong></td>
+                                <td>Prompt</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/ai3dgenerator?prompt=beautiful girl" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+           <!-- Anime Menu -->
+            <div class="table-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="table-header">
+                 <i class='bx bx-tv'></i> Anime Features
+                 <span class="header-badge">1</span>
+               </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Features</th>
+                                <th>Parameter</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-border-bottom-0">
+                            <tr class="feature-row">
+                                <td><strong>Quotes'Anime</strong></td>
+                                <td>Tidak ada</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/quotesanime" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Hentai</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/hentai?q=anime" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Komikindo</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/komikindo-search?q=naruto" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Amv</strong></td>
+                                <td>Tidak ada</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/amv" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Waifu</strong></td>
+                                <td>Tidak ada</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/waifu" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Husbu</strong></td>
+                                <td>Tidak ada</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/husbu" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Neko</strong></td>
+                                <td>Tidak ada</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/neko" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Manga'Search</strong></td>
+                                <td>Tidak ada</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/mangas?q=the player" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Filler'Search</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/fillersearch?q=one punch man" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Filler'Detail</strong></td>
+                                <td>Url</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/fillerdetail?url=https://www.animefillerlist.com/shows/one-piece/im-gonna-be-king-pirates" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Filler'List</strong></td>
+                                <td>Url</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/fillerlist?url=https://www.animefillerlist.com/shows/one-piece" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Downloader Menu -->
+            <div class="table-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="table-header">
+                 <i class='bx bx-download'></i> Download Features
+                 <span class="header-badge">1</span>
+               </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Features</th>
+                                <th>Parameter</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="feature-row">
+                                <td><strong>Ytmp3</strong></td>
+                                <td>Url</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/youtube-audio?url=https://youtu.be/zciZMLEcjKo?si=31yQdIWfhO0pxmaS" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Ytmp4</strong></td>
+                                <td>Url</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/youtube-video?url=https://youtu.be/zciZMLEcjKo?si=31yQdIWfhO0pxmaS" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Ytmp3 V2</strong></td>
+                                <td>Url</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/youtube-audiov2?url=https://youtu.be/zciZMLEcjKo?si=31yQdIWfhO0pxmaS" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Ytmp4 V2</strong></td>
+                                <td>Url</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/youtube-videov2?url=https://youtu.be/zciZMLEcjKo?si=31yQdIWfhO0pxmaS" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Tiktok</strong></td>
+                                <td>Url</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/tiktok?url=https://vt.tiktok.com/ZS6bpvSWy/" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Facebook</strong></td>
+                                <td>Url</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/facebook?url=https://www.facebook.com/TeguhSuwandi19/videos/5230538373729232/?mibextid=XBoEBUlHZ1eoDabU" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Instagram</strong></td>
+                                <td>Url</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/instagram?url=https://www.instagram.com/reel/Cf1HZNvvGuM/?igshid=YmMyMTA2M2Y=" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Twitter</strong></td>
+                                <td>Url</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/twitter?url=https://twitter.com/faqeeyaaz/status/1242789155173617664?s=20&t=DRgdl9U8MwTwpY0o1o-96g" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Mediafire</strong></td>
+                                <td>Url</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/mediafire?url=https://www.mediafire.com/file/pwxob70rpgma9lz/GBWhatsApp_v8.75%2528Tutorial_Yud%2529.apk/file" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Spotify</strong></td>
+                                <td>Url</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/spotify?url=https://open.spotify.com/track/22skzmqfdWrjJylampe0kt?si=SjOAgBrsS5KQr5aN3Ku6_w" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Capcut</strong></td>
+                                <td>Url</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/capcut?url=https://www.capcut.com/t/Zs8Sw9wsE/aesthetic" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Pinterest</strong></td>
+                                <td>Url</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/pinterest-download?url=https://id.pinterest.com/pin/862439397377053654" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Stickerly</strong></td>
+                                <td>Url</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/stickerly?url=https://sticker.ly/s/7X2MCQ" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Snackvideo</strong></td>
+                                <td>Url</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/snackvideodl?url=https://www.snackvideo.com/@ssemlimitess/video/5217570273887911585" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Soundcloud</strong></td>
+                                <td>Url</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/soundclouddl?url=https://soundcloud.com/muhammad-roychan-ubaydillah/rebellion-rose-aku-kamu-dan-samudra" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Threads</strong></td>
+                                <td>Url</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/threads?url=https://www.threads.net/@fatkomik/post/DGRdxGcTHoX?xmt=AQGz1cWVSXeVABrByLpt5AwfVLL0EO9_OjGIL0axJAhfUQ" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>AIO</strong></td>
+                                <td>Url</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/aio?url=" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Maker Menu -->
+            <div class="table-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="table-header">
+                 <i class='bx bx-edit-alt'></i> Maker Features
+                 <span class="header-badge">1</span>
+               </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Features</th>
+                                <th>Parameter</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-border-bottom-0">
+                            <tr class="feature-row">
+                                <td><strong>BratV1</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/bratv1?q=hai" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>BratV2</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/bratv2?q=hai apa kabar mu" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Animbrat</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/animbrat?q=apa kabar mu" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Carbon Code</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/carbon?q=import AgungApi from 'agungny'" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Carbon Code V2</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/carbonityv2?q=agung" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Writetext</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/writetext?q=agung" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Royaltext</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/royaltext?q=agung" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Deletingtext</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/deletingtext?q=agung" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Sandsummer</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/sandsummer?q=agung" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Flagtext</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/flagtext?q=agung" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Neonglitch</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/neonglitch?q=agung" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Pixelglitch</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/pixelglitch?q=agung" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Logomaker</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/logomaker?q=agung" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Advancedglow</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/advancedglow?q=agung" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Beautiful</strong></td>
+                                <td>Url</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/beautiful?url=https://i.ibb.co.com/QFb0K9JB/Screenshot-20250216-200009-Chrome.jpg" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Pornhub</strong></td>
+                                <td>Query1 & Query2</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/pornhub?text1=agung&text2=ny" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Random Menu -->
+            <div class="table-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="table-header">
+                 <i class='bx bx-image'></i> Random Features
+                 <span class="header-badge">1</span>
+               </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Features</th>
+                                <th>Parameter</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-border-bottom-0">
+                            <tr class="feature-row">
+                                <td><strong>Cogan</strong></td>
+                                <td>Tidak ada</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/cogan" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Cecan</strong></td>
+                                <td>Tidak ada</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/cecan" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Mobil</strong></td>
+                                <td>Tidak ada</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/rmobil" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Korea</strong></td>
+                                <td>Tidak ada</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/ckorea" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Jepang</strong></td>
+                                <td>Tidak ada</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/cjepang" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Vietnam</strong></td>
+                                <td>Tidak ada</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/cvietnam" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Cina</strong></td>
+                                <td>Tidak ada</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/ccina" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Search Menu -->
+            <div class="table-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="table-header">
+                 <i class='bx bx-search'></i> Search Features
+                 <span class="header-badge">1</span>
+               </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Features</th>
+                                <th>Parameter</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-border-bottom-0">
+                            <tr class="feature-row">
+                                <td><strong>Youtube</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/youtube-search?q=Mojang" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Tiktok Search</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/tiktok-search?q=whatsapp" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Wikimedia</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/wikimedia?q=baju kekinian" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Wallpaper</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/wallpaper?q=mojang" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Spotify Search</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/spotifys?q=serana" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Pinterest</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/pinterest-search?q=Programmer" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Snackvideo</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/snackvideos?q=meme" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Tiktok Photo</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/tiktokphoto?q=mojang" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Soundcloud</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/soundclouds?q=serana" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Meme Sound</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/memesound?q=wibu" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Group Wa</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/searchgroup?q=bot wa" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Stalk Menu -->
+            <div class="table-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="table-header">
+                 <i class='bx bx-show'></i> Stalk Features
+                 <span class="header-badge">1</span>
+               </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Features</th>
+                                <th>Parameter</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-border-bottom-0">
+                            <tr class="feature-row">
+                                <td><strong>IG Stalk</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/igstalk?q=jokowi" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>TT Stalk</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/ttstalk?q=jokowi" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Meta Data</strong></td>
+                                <td>Url</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/metadata?url=https://whatsapp.com/channel/0029Va7cGfw7DAWzyEJLyO45" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Ffstalk</strong></td>
+                                <td>Id</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/ffstalk?id=9279778891" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Tools Menu -->
+            <div class="table-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="table-header">
+                 <i class='bx bx-world'></i> Tools Features
+                 <span class="header-badge">1</span>
+               </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Features</th>
+                                <th>Parameter</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-border-bottom-0">
+                            <tr class="feature-row">
+                                <td><strong>SS Web</strong></td>
+                                <td>Url</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/ssweb?url=https://openai.com" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>SS Web2</strong></td>
+                                <td>Url</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/ssweb2?url=https://openai.com" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Remini</strong></td>
+                                <td>Url</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/remini?url=https://i.ibb.co.com/QFb0K9JB/Screenshot-20250216-200009-Chrome.jpg" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Remove BG</strong></td>
+                                <td>Url</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/removebg?url=https://i.ibb.co.com/QFb0K9JB/Screenshot-20250216-200009-Chrome.jpg" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Lirik</strong></td>
+                                <td>Query</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/lirik?q=sempurna" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="feature-row">
+                                <td><strong>Google Lens</strong></td>
+                                <td>Url</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>
+                                    <a href="/api/googlelens?url=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgVaXcDCQ0fvMoSJF7ojt1FPX8iLhZmItAXwaLG6Bv8aNww3A_3tOsUzQ&s=10" class="action-btn">
+                                        <i class='bx bx-play-circle'></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <footer class="footer" data-aos="fade-up">
+                <div class="footer-links">
+                    <a href="https://instagram.com/gungny_08" target="_blank">
+                        <i class='bx bxl-instagram'></i>Instagram
+                    </a>
+                    <a href="https://wa.me/62881027377047" target="_blank">
+                        <i class='bx bxl-whatsapp'></i>WhatsApp
+                    </a>
+                </div>
+                <div class="copyright">© 2025 AgungNY And Team. All rights reserved.</div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

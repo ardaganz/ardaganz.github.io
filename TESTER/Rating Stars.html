@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rating Star 5</title>
+    
+    <!-- Link Boxicons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .starsRatingArda {
+            font-size: 50px;
+            cursor: pointer;
+            color: #ccc;
+            display: flex;
+            justify-content: center;
+        }
+        .starsRatingArda i {
+            transition: color 0.2s;
+            width: 50px; /* Pastikan setiap bintang memiliki ukuran klik yang jelas */
+        }
+        .starsRatingArda .active {
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Pilih Rating:</h2>
+    <div id="rating-container" class="starsRatingArda">
+        <i class="bx bx-star" data-value="1"></i>
+        <i class="bx bx-star" data-value="2"></i>
+        <i class="bx bx-star" data-value="3"></i>
+        <i class="bx bx-star" data-value="4"></i>
+        <i class="bx bx-star" data-value="5"></i>
+    </div>
+
+    <p>Rating yang dipilih: <span id="selected-rating">0</span></p>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const starsRatingArda = document.querySelectorAll("#rating-container i");
+            const selectedRating = document.getElementById("selected-rating");
+            let currentRating = localStorage.getItem("rating") || 0;
+
+            highlightstarsRatingArda(currentRating);
+            selectedRating.textContent = currentRating;
+
+            starsRatingArda.forEach((star, index) => {
+                star.addEventListener("mousemove", function (e) {
+                    let value = index + 1;
+                    if (e.offsetX < star.clientWidth / 2) {
+                        value -= 0.5; // Jika mouse di sebelah kiri bintang, jadikan setengah
+                    }
+                    highlightstarsRatingArda(value, true);
+                });
+
+                star.addEventListener("click", function (e) {
+                    let value = index + 1;
+                    if (e.offsetX < star.clientWidth / 2) {
+                        value -= 0.5;
+                    }
+                    currentRating = value;
+                    localStorage.setItem("rating", currentRating);
+                    highlightstarsRatingArda(currentRating);
+                    selectedRating.textContent = currentRating;
+                });
+
+                star.addEventListener("mouseleave", function () {
+                    highlightstarsRatingArda(currentRating);
+                });
+            });
+
+            function highlightstarsRatingArda(rating, preview = false) {
+                starsRatingArda.forEach((star, i) => {
+                    let value = i + 1;
+                    if (value <= rating) {
+                        star.className = "bx bxs-star active"; // Bintang penuh
+                    } else if (value - 0.5 === rating) {
+                        star.className = "bx bxs-star-half active"; // Setengah bintang
+                    } else {
+                        star.className = "bx bx-star"; // Bintang kosong
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
